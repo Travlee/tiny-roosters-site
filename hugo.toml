@@ -1,8 +1,22 @@
-baseURL = 'http://localhost:1313'
+baseURL = 'https://tinyroosters.com'
 languageCode = 'en-us'
 title = 'Tiny Roosters'
 theme = "tinyroosters"
 
-[watcher]
-  rebuild = true  # Rebuild on file changes
-  debounce = 150   # Debounce time in milliseconds
+[menus]
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 10
+  [[menus.main]]
+    name = 'Blog'
+    pageRef = '/blog'
+    weight = 20
+  [[menus.main]]
+    name = 'Projects'
+    pageRef = '/projects'
+    weight = 30
+  [[menus.main]]
+    name = 'Contact'
+    pageRef = '/contact'
+    weight = 40

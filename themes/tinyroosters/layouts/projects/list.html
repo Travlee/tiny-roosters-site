@@ -1,7 +1,8 @@
 {{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <h2>This is specific to projects!</h2>
   {{ .Content }}
-  <h1>Testing</h1>
-  {{ range site.RegularPages }}
+  {{ range where .Pages "Type" "projects" }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ .Summary }}
   {{ end }}
