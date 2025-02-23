@@ -76,11 +76,11 @@ header img#character_logo {
     right: 0;
 }
 
-article a {
+main a {
     color: var(--primary-color);
     text-decoration: underline;
 }
-article a:hover {
+main a:hover {
     color: var(--alt-primary-color);
     background-color: var(--alt-secondary-color);
 }
@@ -93,6 +93,7 @@ header a{
     text-decoration: none;
     font-family: "RedHatDisplay-Bold";
     /* font-family: "RedHatDisplay-Black"; */
+    margin: 0 10px;
 }
 header a:hover {
     text-decoration: underline;
