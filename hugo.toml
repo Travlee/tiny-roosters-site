@@ -1,0 +1,8 @@
+baseURL = 'http://localhost:1313'
+languageCode = 'en-us'
+title = 'Tiny Roosters'
+theme = "tinyroosters"
+
+[watcher]
+  rebuild = true  # Rebuild on file changes
+  debounce = 150   # Debounce time in milliseconds

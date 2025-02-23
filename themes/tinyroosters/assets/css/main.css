@@ -1,0 +1,125 @@
+@import url("/css/fonts.css");
+
+:root {
+    --primary-color: #FEC426;
+    --alt-primary-color: #060606;
+
+    --secondary-color: #060606;
+    --alt-secondary-color: #FEC426;
+
+    --secondary-font-color: #474347;
+
+    --font-color: white;
+    --alt-font-color: #060606;
+
+    --btn-hover-color: #FEC426;
+    --alt-btn-hover-color: #362700;
+
+    --link-color: #FEC426;
+    --alt-link-color: #362700;
+    --link-visited-color: #FEC426;
+    --alt-link-visited-color: #FEC426;
+}
+
+body {
+    color: var(--font-color);
+    background-color: var(--secondary-color);
+    font-family: "RedHatDisplay-Regular";
+    max-width: 800px;
+    padding: 1em;
+    line-height: 1.4;
+    hyphens: auto;
+    font-size: 16px;
+}
+
+@media screen and (max-device-width: 950px) {
+    body {
+        margin: 2em auto;
+    }
+}
+
+@media screen and (min-width: 951px) {
+    body {
+        margin: 2em auto;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header img#text_logo {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 150px;
+    min-height: auto;
+}
+
+header img#text_logo_alt {
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 150px;
+    min-height: auto;
+}
+
+header img#character_logo {
+    display: block;
+    max-width: 100px;
+    max-height: 100px;
+    min-width: 50px;
+    min-height: auto;
+    right: 0;
+}
+
+article a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+article a:hover {
+    color: var(--alt-primary-color);
+    background-color: var(--alt-secondary-color);
+}
+
+header a{
+    color: var(--alt-secondary-color);
+    cursor: pointer;
+    font-size: .8em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: "RedHatDisplay-Bold";
+    /* font-family: "RedHatDisplay-Black"; */
+}
+header a:hover {
+    text-decoration: underline;
+}
+
+img#invert {
+    display: block;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: 4em auto 0 auto;
+
+    cursor: pointer;
+
+    -webkit-animation: spin 20s linear infinite;
+    -moz-animation: spin 20s linear infinite;
+    animation: spin 20s linear infinite;
+}
+@-moz-keyframes spin {
+    100% { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform:rotate(360deg);
+    }
+}

@@ -1,0 +1,19 @@
+{{- /* Our home page design. */}}
+
+{{ define "main" }}
+
+<header>
+    <p>Hey baby! This is the home page that is loaded. What you think, dolly?? {{ site.Title  }}</p>
+</header>
+
+<main>
+    {{ range where site.RegularPages "Type" "posts" }}
+        <article>
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p>{{ .Params.date.Format "2006-01-02 Mon" }}</p>
+            <p>{{ .Summary }}</p>
+        </article>
+    {{ end }}
+</main>
+
+{{ end }}

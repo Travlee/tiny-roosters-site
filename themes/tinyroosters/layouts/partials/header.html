@@ -1,0 +1,8 @@
+<a href="/" target="_self">
+    <img src="{{ .Site.BaseURL }}images/text_logo.svg" alt="{{ site.Title }} Text Logo" id="text_logo">
+    <img src="{{ .Site.BaseURL }}images/text_logo_alt.svg" alt="{{ site.Title }} Text Alt Logo" id="text_logo_alt">
+</a>
+
+{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+
+<img src="{{ .Site.BaseURL }}images/character_logo.svg" alt="{{ site.Title }} Character Logo" id="character_logo">
