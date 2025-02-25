@@ -1,8 +1,10 @@
+{{- $page := .page }}
+{{- $menuID := .menuID }}
+
 {{ with site.Menus.main }}
   <nav class="menu">
     {{ range . }}
-      {{ if $.IsMenuCurrent }}
-        <!-- Fix this current page check; is broken -->
+      {{ if $page.IsMenuCurrent .Menu . }}
         <a class="active-page" aria-current="page" href="{{ .URL }}">{{ .Name }}</a>
       {{ else }}
         <a href="{{ .URL }}">{{ .Name }}</a>

@@ -16,11 +16,11 @@
       <description>&lt;p&gt;this is just to test things.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Initial_post</title>
+      <title>Initial Post</title>
       <link>http://localhost:1313/blog/initial-post/</link>
       <pubDate>Sun, 23 Feb 2025 16:26:37 -0600</pubDate>
       <guid>http://localhost:1313/blog/initial-post/</guid>
-      <description>&lt;p&gt;This is a blog post!&lt;/p&gt;</description>
+      <description>&lt;p&gt;This is my first blog post on here blog post!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

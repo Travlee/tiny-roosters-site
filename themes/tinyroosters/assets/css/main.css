@@ -124,3 +124,7 @@ img#invert {
         transform:rotate(360deg);
     }
 }
+
+.active-page {
+    text-decoration: underline;
+}

@@ -23,18 +23,18 @@
       <description>&lt;p&gt;Triangles are attacking the home world of the Unicorns. How long can you defend them!?&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Initial_post</title>
+      <title>Initial Post</title>
       <link>http://localhost:1313/blog/initial-post/</link>
       <pubDate>Sun, 23 Feb 2025 16:26:37 -0600</pubDate>
       <guid>http://localhost:1313/blog/initial-post/</guid>
-      <description>&lt;p&gt;This is a blog post!&lt;/p&gt;</description>
+      <description>&lt;p&gt;This is my first blog post on here blog post!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Contact</title>
       <link>http://localhost:1313/contact/</link>
       <pubDate>Sun, 23 Feb 2025 16:26:08 -0600</pubDate>
       <guid>http://localhost:1313/contact/</guid>
-      <description>&lt;p&gt;General: &lt;a href=&#34;mailto:contact@tinyroosters.com&#34;&gt;contact@tinyroosters.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Social: &lt;a href=&#34;https://bsky.app/profile/tinyroosters.bsky.social&#34;&gt;@tinyroosters.bsky.social&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;General: &lt;a href=&#34;mailto:contact@tinyroosters.com&#34;&gt;contact@tinyroosters.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Social: &lt;a href=&#34;https://bsky.app/profile/tinyroosters.bsky.social&#34;&gt;@tinyroosters.bsky.social&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>

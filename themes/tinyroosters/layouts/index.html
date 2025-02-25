@@ -1,32 +1,29 @@
 {{- /* Our home page design. */}}
 
 {{ define "main" }}
-
-<header>
-    <p>Hey baby! This is the home page that is loaded. What you think, dolly?? {{ site.Title  }}</p>
-</header>
-
 <main>
-    {{ range where site.RegularPages "Type" "blog" }}
-        <article>
-            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <p>{{ .Params.date.Format "2006-01-02 Mon" }}</p>
-            <p>{{ .Summary }}</p>
-        </article>
-    {{ end }}
-</main>
+    <!-- This loads in index.md from content -->
+    <h2>{{ .Content }} {{ site.Title }}</h2>
 
-<main>
-    {{ range where site.RegularPages "Type" "projects" }}
-        <article>
-            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <p>{{ .Params.date.Format "2006-01-02 Mon" }}</p>
-            <p>{{ .Summary }}</p>
-        </article>
-    {{ end }}
-</main>
+    <section>
+        {{ range where site.RegularPages "Type" "blog" }}
+            <article>
+                <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                <p>{{ .Params.date.Format "2006-01-02 Mon" }}</p>
+                <p>{{ .Summary }}</p>
+            </article>
+        {{ end }}
+    </section>
 
-<!-- This loads in index.md from content -->
-{{ .Content }}
+    <section>
+        {{ range where site.RegularPages "Type" "projects" }}
+            <article>
+                <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                <p>{{ .Params.date.Format "2006-01-02 Mon" }}</p>
+                <p>{{ .Summary }}</p>
+            </article>
+        {{ end }}
+    </section>
+</main>
 
 {{ end }}

@@ -1,9 +1,6 @@
 # Todo
-- hide about/contact info behind buttons. Have in body already, just display:none until btn is clicked.
 - Have games be the only shown content on the index (save the buttons).
 - Make the default color for mobile be black, and the yellow otherwise.
-- Add an about, games/projects, and updates(blog posts sort of things) page.
-- Make into hugo template?
 - Add bugs btn to send out to github issues. Maybe a quick tip on how to add issue on github.
 - Create GH Actions IAM user with just access keys and update S3 policy to allow get/put. Add keys to GH Repo.
   - On the GH action, have it invalidate cache.
