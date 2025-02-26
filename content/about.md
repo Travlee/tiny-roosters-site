@@ -4,3 +4,10 @@ draft = false
 +++
 
 I'm Lee, solo developer behind Tiny Roosters. I'll be making games and talking about them here. Feel free to get in touch.
+
+### Tools
+- Godot (GDScript)
+- VSCode
+- Git
+- Windows Terminal
+- WSL2
