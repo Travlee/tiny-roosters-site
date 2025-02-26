@@ -3,4 +3,4 @@ title = 'Home'
 draft = false
 +++
 
-Home content here?
+Welcome to Tiny Roosters!

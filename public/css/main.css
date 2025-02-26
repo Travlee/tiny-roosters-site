@@ -85,7 +85,7 @@ main a:hover {
     background-color: var(--alt-secondary-color);
 }
 
-header a{
+header .menu a{
     color: var(--alt-secondary-color);
     cursor: pointer;
     font-size: .8em;
@@ -127,4 +127,11 @@ img#invert {
 
 .active-page {
     text-decoration: underline;
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
 }

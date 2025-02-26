@@ -3,3 +3,6 @@
 
 # Temporary lock file while building
 /.hugo_build.lock
+
+# Temp disable public
+/public/*

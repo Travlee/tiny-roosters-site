@@ -1,14 +1,13 @@
-# baseURL = 'https://tinyroosters.com'
-baseURL = 'http://localhost:1313'
+baseURL = 'https://tinyroosters.com'
 languageCode = 'en-us'
 title = 'Tiny Roosters'
 theme = "tinyroosters"
 
 [menus]
   [[menus.main]]
-    name = 'Blog'
-    pageRef = '/blog'
-    url = '/blog'
+    name = 'Updates'
+    pageRef = '/updates'
+    url = '/updates'
     weight = 10
   [[menus.main]]
     name = 'Projects'

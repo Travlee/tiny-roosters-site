@@ -36,6 +36,35 @@
     root.style.setProperty("--alt-secondary-color", secondary_color);
     root.style.setProperty("--alt-font-color", font_color);
   }
+  function handleKeybind(event) {
+    const key = event.key.toLowerCase();
+    if (key === "h") {
+      window.location.href = "/";
+    } else if (key === "b") {
+      window.history.back();
+    } else if (key === "f") {
+      window.history.forward();
+    } else if (key === "r") {
+      window.location.reload();
+    } else if (key === "a") {
+      window.location.href = "/about";
+    } else if (key === "c") {
+      window.location.href = "/contact";
+    } else if (key === "p") {
+      window.location.href = "/projects";
+    } else if (key === "u") {
+      window.location.href = "/updates";
+    } else if (key === "k") {
+      window.scrollBy(0, -50);
+    } else if (key === "j") {
+      window.scrollBy(0, 50);
+    } else if (key === "i") {
+      invert_page();
+    } else if (key === "?") {
+      console.log("Keybinds:");
+    }
+  }
+  document.addEventListener("keydown", handleKeybind);
   document.addEventListener("DOMContentLoaded", function() {
     const invert_btn = document.getElementById("invert");
     invert_btn.addEventListener("click", invert_page);

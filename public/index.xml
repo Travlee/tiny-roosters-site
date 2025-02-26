@@ -6,14 +6,21 @@
     <description>Recent content in Home on Tiny Roosters</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Feb 2025 17:08:41 -0600</lastBuildDate>
+    <lastBuildDate>Tue, 25 Feb 2025 16:43:10 -0600</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Dogs</title>
+      <link>http://localhost:1313/updates/dogs/</link>
+      <pubDate>Tue, 25 Feb 2025 16:43:10 -0600</pubDate>
+      <guid>http://localhost:1313/updates/dogs/</guid>
+      <description>Every about dogs! Not every dog, but everything in here is about dogs!</description>
+    </item>
+    <item>
       <title>Second</title>
-      <link>http://localhost:1313/blog/second/</link>
+      <link>http://localhost:1313/updates/second/</link>
       <pubDate>Sun, 23 Feb 2025 17:08:41 -0600</pubDate>
-      <guid>http://localhost:1313/blog/second/</guid>
-      <description>&lt;p&gt;this is just to test things.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/updates/second/</guid>
+      <description>Just a test &amp;hellip;.</description>
     </item>
     <item>
       <title>Unicorns vs Triangles</title>
@@ -24,10 +31,10 @@
     </item>
     <item>
       <title>Initial Post</title>
-      <link>http://localhost:1313/blog/initial-post/</link>
+      <link>http://localhost:1313/updates/initial-post/</link>
       <pubDate>Sun, 23 Feb 2025 16:26:37 -0600</pubDate>
-      <guid>http://localhost:1313/blog/initial-post/</guid>
-      <description>&lt;p&gt;This is my first blog post on here blog post!&lt;/p&gt;</description>
+      <guid>http://localhost:1313/updates/initial-post/</guid>
+      <description>This is unnecessary but heres my initial summary.</description>
     </item>
     <item>
       <title>Contact</title>
@@ -41,7 +48,7 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m Lee, solo developer behind Tiny Roosters. I&amp;rsquo;ll be making games and talking about them here. Feel free to get in touch.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;m Lee, solo developer behind Tiny Roosters. I&amp;rsquo;ll be making games and talking about them here. Feel free to get in touch.&lt;/p&gt;&#xA;&lt;h3 id=&#34;tools&#34;&gt;Tools&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Godot (GDScript)&lt;/li&gt;&#xA;&lt;li&gt;VSCode&lt;/li&gt;&#xA;&lt;li&gt;Git&lt;/li&gt;&#xA;&lt;li&gt;Windows Terminal&lt;/li&gt;&#xA;&lt;li&gt;WSL2&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

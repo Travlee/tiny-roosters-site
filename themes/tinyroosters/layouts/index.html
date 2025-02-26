@@ -1,25 +1,29 @@
 {{- /* Our home page design. */}}
 
 {{ define "main" }}
-<main>
+<main class="home">
     <!-- This loads in index.md from content -->
-    <h2>{{ .Content }} {{ site.Title }}</h2>
+    <h2>{{ .Content }}</h2>
 
     <section>
-        {{ range where site.RegularPages "Type" "blog" }}
+        <h1>Latest Updates</h1>
+        {{ $posts := where site.RegularPages.ByDate.Reverse "Type" "posts" }}
+        {{ range first 2 $posts }}
             <article>
                 <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-                <p>{{ .Params.date.Format "2006-01-02 Mon" }}</p>
+                <p>{{ .Params.date.Format "2006-01-02" }}</p>
                 <p>{{ .Summary }}</p>
             </article>
         {{ end }}
+
     </section>
 
     <section>
+        <h1>Projects</h1>
         {{ range where site.RegularPages "Type" "projects" }}
             <article>
                 <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-                <p>{{ .Params.date.Format "2006-01-02 Mon" }}</p>
+                <p>{{ .Params.date.Format "2006-01-02" }}</p>
                 <p>{{ .Summary }}</p>
             </article>
         {{ end }}
