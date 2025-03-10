@@ -1,11 +1,24 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+    {{ $date_machine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+    {{ $date_human := .Date | time.Format ":date_long" }}
+    {{ $last_mod_machine := .Lastmod.Format "2006-01-02T15:04:05-07:00" }}
+    {{ $last_mod := .Lastmod.Format "January 2, 2006" }}
 
-  <h2>Testing updates</h2>
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+  <div class="post-title-container">
+    <h1><span class="title-prefix"><a href="{{ .Parent.RelPermalink }}">></a></span> {{ .Title }}</h1>
+    {{ $post_date := printf "%s [modified %s]" $date_human $last_mod }}
+    {{ if eq $last_mod $date_human}}
+      {{ $post_date := printf "%s (updated %s)" $date_human $last_mod }}
+    {{ end }}
 
-  {{ .Content }}
+    <p><time datetime="{{ $date_machine }}">posted on {{ $date_human }}</time></p>
+    <p><time datetime="{{ $last_mod_machine }}">modifed on {{ $last_mod }}</time></p>
+  </div>
+
+
+  <article>
+    {{ .Content }}
+  </article>
+
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}
