@@ -1,4 +1,4 @@
-{{- with resources.Get "js/main.js" }}
+{{- range resources.Match "js/*.js" }}
   {{- if eq hugo.Environment "development" }}
     {{- with . | js.Build }}
       <script src="{{ .RelPermalink }}" defer></script>
