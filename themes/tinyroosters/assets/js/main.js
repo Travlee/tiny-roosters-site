@@ -51,10 +51,6 @@ function handleKeybind(event) {
 
     if(key === 'h'){
         window.location.href = "/";
-    } else if(key === 'b'){
-        window.history.back();
-    } else if(key === 'f'){
-        window.history.forward();
     } else if(key === 'r'){
         window.location.reload();
     } else if(key === 'a'){
@@ -90,3 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const invert_btn = document.getElementById("invert");
     invert_btn.addEventListener("click", invert_page);
 });
+
+
+// # Console log keybind tips
+console.log("helpful keybinds: [h = home, a = about, c = contact, u = updates, p = projects, i = invert, j = scroll down, k = scroll up, r = reload, ? = help]");
