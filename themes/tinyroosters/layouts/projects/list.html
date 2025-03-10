@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  <h1><span class="title-prefix"><a href="{{ .Parent.RelPermalink }}">></a></span> {{ .Title }}</h1>
   {{ .Content }}
   {{ range where .Pages "Type" "projects" }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
