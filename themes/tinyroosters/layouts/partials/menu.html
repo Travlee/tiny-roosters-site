@@ -2,7 +2,7 @@
 {{- $menuID := .menuID }}
 
 {{ with site.Menus.main }}
-  <nav class="menu">
+  <nav>
     {{ range . }}
       {{ if $page.IsMenuCurrent .Menu . }}
         <a class="active-page" aria-current="page" href="{{ .URL }}">{{ .Name }}</a>
