@@ -13,14 +13,14 @@
       <link>http://localhost:1313/updates/dogs/</link>
       <pubDate>Tue, 25 Feb 2025 16:43:10 -0600</pubDate>
       <guid>http://localhost:1313/updates/dogs/</guid>
-      <description>Every about dogs! Not every dog, but everything in here is about dogs!</description>
+      <description>Temp summary for post</description>
     </item>
     <item>
       <title>Second</title>
       <link>http://localhost:1313/updates/second/</link>
       <pubDate>Sun, 23 Feb 2025 17:08:41 -0600</pubDate>
       <guid>http://localhost:1313/updates/second/</guid>
-      <description>Just a test &amp;hellip;.</description>
+      <description>&lt;p&gt;this is just to test things. See how it goes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Unicorns vs Triangles</title>
@@ -34,7 +34,7 @@
       <link>http://localhost:1313/updates/initial-post/</link>
       <pubDate>Sun, 23 Feb 2025 16:26:37 -0600</pubDate>
       <guid>http://localhost:1313/updates/initial-post/</guid>
-      <description>This is unnecessary but heres my initial summary.</description>
+      <description>&lt;h1 id=&#34;low-content&#34;&gt;Low content&lt;/h1&gt;&#xA;&lt;p&gt;This is my first post. However, I do not have much to talk about.&#xA;This does help give me some content to work out the design I want. So that&amp;rsquo;s cool.&lt;/p&gt;&#xA;&lt;p&gt;This is the second paragraph for my first post.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Contact</title>
