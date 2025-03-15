@@ -5,14 +5,14 @@ theme = "tinyroosters"
 
 [menus]
   [[menus.main]]
-    name = 'Updates'
-    pageRef = '/updates'
-    url = '/updates'
-    weight = 10
-  [[menus.main]]
     name = 'Projects'
     pageRef = '/projects'
     url = '/projects'
+    weight = 10
+  [[menus.main]]
+    name = 'Blog'
+    pageRef = '/blog'
+    url = '/blog'
     weight = 20
   [[menus.main]]
     name = 'About'
