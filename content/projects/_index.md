@@ -2,4 +2,4 @@
 title = 'Projects'
 +++
 
-These are all my projects to date.
+<!-- These are all my projects to date. -->
