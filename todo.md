@@ -1,4 +1,5 @@
 # Todo
+- Figure out why last modified for files is not working.
 - Have games be the only shown content on the index (save the buttons).
 - Make the default color for mobile be black, and the yellow otherwise.
 - Add bugs btn to send out to github issues. Maybe a quick tip on how to add issue on github.
