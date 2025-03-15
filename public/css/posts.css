@@ -53,7 +53,7 @@ article h4 {
     margin: 0;
     font-size: var(--12px);
     font-style: italic;
-    /* color: #474347; */
+    color: var(--font-less-contrast);
 }
 
 /* .post-title-container a{
@@ -64,40 +64,50 @@ article h4 {
     display: grid;
 }
 
+.posts-container{
+    color: var(--font-color);
+}
+
 .posts-container p{
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    color: inherit;
+    /* color: var(--font-color); */
+    color: var(--font-less-contrast);
     margin: 0.25rem 0;
 }
 
 .posts-container a{
     text-decoration: none;
+    color: var(--font-color);
 }
-/* .posts-container a:hover{
-    text-decoration: underline;
-    color: var(--alt-secondary-color);
-} */
-
 .posts-container a:hover{
     text-decoration: underline;
-    color: var(--secondary-color);
 }
 
+.posts-container a:hover span {
+    color: var(--secondary-color);
+}
+/* .posts-container a:hover .post-time,
+.posts-container a:hover .post-title,
+.posts-container a:hover .post-desc {
+    text-decoration: underline;
+    color: var(--secondary-color);
+} */
+
 .post-time{
-    color: var(--font-color);
+    /* color: var(--font-color); */
+    /* color: inherit; */
+    color: #474347;
     text-decoration: none;
 }
 .post-title{
-    text-decoration: underline;
+    text-decoration: none;
+    /* text-decoration: underline; */
+    text-decoration-color: var(--primary-color);
     color: var(--primary-color);
 }
 .post-desc{
     color: #474347;
     text-decoration: none;
 }
-
-/* .posts-container span:hover{
-    color: var(--secondary-color);
-} */

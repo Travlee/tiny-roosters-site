@@ -48,8 +48,8 @@
       window.location.href = "/contact";
     } else if (key === "p") {
       window.location.href = "/projects";
-    } else if (key === "u") {
-      window.location.href = "/updates";
+    } else if (key === "b") {
+      window.location.href = "/blog";
     } else if (key === "k") {
       window.scrollBy(0, -50);
     } else if (key === "j") {
@@ -65,5 +65,5 @@
     const invert_btn = document.getElementById("invert");
     invert_btn.addEventListener("click", invert_page);
   });
-  console.log("helpful keybinds: [h = home, a = about, c = contact, u = updates, p = projects, i = invert, j = scroll down, k = scroll up, r = reload, ? = help]");
+  console.log("helpful keybinds: [h = home, a = about, c = contact, b = blog, p = projects, i = invert, j = scroll down, k = scroll up, r = reload, ? = help]");
 })();
