@@ -1,15 +1,12 @@
 body article {
     margin-top: 2rem;
 }
-
 main small{
     font-style: italic;
 }
-
 article h1, article h2, article h3, article h4 {
     text-transform: capitalize;
 }
-
 article h1 {
     font-size: calc(var(--h1) * .8);
 }
@@ -23,7 +20,7 @@ article h4 {
     font-size: calc(var(--h4) * .8);
 }
 
-.posts {
+.logs {
     display: grid;
     grid-template-columns: 120px 1fr 300px;
     gap: 10px;
@@ -33,71 +30,65 @@ article h4 {
     align-items: center;
 }
 
-/* .post-title{ */
-    /* color: var(--primary-color); */
-    /* border-bottom: dashed 1px; */
-    /* font-size: var(--40px); */
-/* } */
-
-.post-title-container{
+.log-title-container{
     /* display: flex;
     justify-content: space-between;
     align-items: center; */
     margin: 0;
 }
-.post-title-container h1{
+.log-title-container h1{
     margin: 0;
 }
 
-.post-title-container p{
+.log-title-container p{
     margin: 0;
     font-size: var(--12px);
     font-style: italic;
-    /* color: #474347; */
+    color: var(--font-less-contrast);
 }
 
-/* .post-title-container a{
+/* .log-title-container a{
     color: var(--primary-color);
 } */
 
-.posts-container{
+.logs-container{
     display: grid;
 }
 
-.posts-container p{
+.logs-container{
+    color: var(--font-color);
+}
+.logs-container p{
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    color: inherit;
+    color: var(--font-less-contrast);
     margin: 0.25rem 0;
 }
-
-.posts-container a{
+.logs-container a{
     text-decoration: none;
+    color: var(--font-color);
 }
-/* .posts-container a:hover{
+.logs-container a:hover{
     text-decoration: underline;
-    color: var(--alt-secondary-color);
-} */
+}
 
-.posts-container a:hover{
-    text-decoration: underline;
+.logs-container a:hover span {
     color: var(--secondary-color);
+    text-decoration: underline;
 }
 
-.post-time{
+.log-time{
     color: var(--font-color);
     text-decoration: none;
 }
-.post-title{
+.log-title{
+    text-decoration: none;
     text-decoration: underline;
+    text-decoration-color: var(--primary-color);
     color: var(--primary-color);
 }
-.post-desc{
-    color: #474347;
+.log-desc{
+    color: var(--font-less-contrast);
     text-decoration: none;
 }
-
-/* .posts-container span:hover{
-    color: var(--secondary-color);
-} */

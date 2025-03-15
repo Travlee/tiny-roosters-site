@@ -3,7 +3,7 @@ date = '2025-02-25T16:43:10-06:00'
 draft = false
 title = 'Dogs'
 description = 'This post is all about dogs. Not every dog, but all about them. Make this super long to test out the overflowing on the list page.'
-type = 'posts'
+type = 'logs'
 summary = 'Temp summary for post'
 +++
 
