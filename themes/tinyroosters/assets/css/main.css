@@ -78,7 +78,7 @@ body main a:hover {
 
 main h1 {
     font-size: var(--h1);
-
+    text-transform: uppercase;
 }
 main h2 {
     font-size: var(--h2);
@@ -89,18 +89,39 @@ main h3 {
 main h4 {
     font-size: var(--h4);
 }
+body article {
+    margin-top: 2rem;
+}
+main small{
+    font-style: italic;
+}
+article h1, article h2, article h3, article h4 {
+    text-transform: capitalize;
+}
+article h1 {
+    font-size: calc(var(--h1) * .8);
+}
+article h2 {
+    font-size: calc(var(--h2) * .8);
+}
+article h3 {
+    font-size: calc(var(--h3) * .8);
+}
+article h4 {
+    font-size: calc(var(--h4) * .8);
+}
 
 main {
     margin-top: 5em;
 }
 main img {
-    max-width: 100%;
+    max-width: 800px;
+    min-width: 200px;
     height: auto;
 }
 
 main h1, main h2, main h3, main h4 {
     color: var(--font-color);
-    text-transform: uppercase;
     font-family: 'RedHatDisplay-Black';
 }
 
