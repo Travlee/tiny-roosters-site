@@ -1,5 +1,5 @@
 +++
-title = 'Updates'
+title = 'Logs'
 draft = false
 type = 'posts'
 +++

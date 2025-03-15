@@ -10,9 +10,9 @@ theme = "tinyroosters"
     url = '/projects'
     weight = 10
   [[menus.main]]
-    name = 'Blog'
-    pageRef = '/blog'
-    url = '/blog'
+    name = 'Logs'
+    pageRef = '/logs'
+    url = '/logs'
     weight = 20
   [[menus.main]]
     name = 'About'
