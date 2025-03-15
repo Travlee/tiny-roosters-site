@@ -59,8 +59,8 @@ function handleKeybind(event) {
         window.location.href = "/contact";
     } else if(key === 'p'){
         window.location.href = "/projects";
-    } else if(key === 'b'){
-        window.location.href = "/blog";
+    } else if(key === 'l'){
+        window.location.href = "/logs";
     } else if(key === 'k'){
         window.scrollBy(0, -50);
     } else if(key === 'j'){
@@ -89,4 +89,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // # Console log keybind tips
-console.log("helpful keybinds: [h = home, a = about, c = contact, b = blog, p = projects, i = invert, j = scroll down, k = scroll up, r = reload, ? = help]");
+console.log("helpful keybinds: [h = home, a = about, c = contact, l = logs, p = projects, i = invert, j = scroll down, k = scroll up, r = reload, ? = help]");
