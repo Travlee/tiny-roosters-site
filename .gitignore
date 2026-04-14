@@ -9,3 +9,9 @@
 
 # VSCODE
 **/*.code-workspace
+
+# notes obviously
+notes_*.html
+
+# more notes
+scratch.md
