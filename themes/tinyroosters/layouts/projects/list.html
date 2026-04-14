@@ -5,17 +5,15 @@
   </h1>
 
   <div class="project-container">
+
   {{ range where .Pages "Type" "projects" }}
 
-    <p class="project-item">
-
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-
-      {{ with .Params.cover_image }}
-        <img src="{{ . }}" alt="{{ $.Title }}" class="project-image" />
-      {{ end }}
-
-    </p>
+    <div class="project-item">
+      <h4>{{ .LinkTitle }}</h4>
+      <a href="{{ .RelPermalink }}">
+        <img src="{{ .Params.cover_image }}" alt="{{ .LinkTitle }}">
+      </a>
+    </div>
 
   {{ end }}
   </div>
