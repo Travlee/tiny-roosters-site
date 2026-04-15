@@ -29,6 +29,10 @@
     color: var(--primary-color);
 } */
 
+.logs-content{
+    margin-bottom: 20px;
+}
+
 .logs-container{
     display: grid;
 }
