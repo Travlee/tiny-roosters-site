@@ -3,11 +3,12 @@ title = 'About'
 draft = false
 +++
 
-I'm Lee, solo developer behind Tiny Roosters. I'll be making games and talking about them here. Feel free to get in touch.
+I'm Lee, founder and solo dev of Tiny Roosters. I'll be making games and other things and talking about them and other things here. Feel free to reach out.
 
-### Tools
-- Godot (GDScript)
+## Tools
+- Godot Game Engine
 - VSCode
 - Git
+- Github
 - Windows Terminal
 - WSL2
