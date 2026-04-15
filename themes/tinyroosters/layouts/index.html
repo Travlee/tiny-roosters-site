@@ -1,14 +1,31 @@
-{{- /* Our home page design. */}}
-
 {{ define "main" }}
 
 <!-- This loads in index.md from content -->
-<!-- <header>
+<header>
     <h2>{{ .Content }}</h2>
-</header> -->
+</header>
 
+<section>
+    <h1>Latest Updates</h1>
+    {{ $posts := where site.RegularPages.ByDate.Reverse "Type" "logs" }}
+    {{ range first 2 $posts }}
+        <article>
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p>{{ .Params.date.Format "2006-01-02" }}</p>
+        </article>
+    {{ end }}
 
-<h1>hi</h1>
+</section>
+
+<section>
+    <h1>Projects</h1>
+    {{ range where site.RegularPages "Type" "projects" }}
+        <article>
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p>{{ .Params.date.Format "2006-01-02" }}</p>
+        </article>
+    {{ end }}
+</section>
 
 
 {{ end }}
