@@ -1,10 +1,10 @@
 {{ define "main" }}
 
   <h1>
-    <span class="title-prefix"><a href="{{ .Parent.RelPermalink }}">></a></span> {{ .Title }}
+    <span class="title-prefix"><a href="{{ .Parent.RelPermalink }}"><</a></span> {{ .Title }}
   </h1>
 
-  {{ .Content }}
+  <div class="logs-content">{{ .Content }}</div>
 
   <div class="logs-container">
   {{ range .Pages }}
@@ -19,7 +19,7 @@
       </span>
       <a href="{{ .RelPermalink }}" title="{{ .Description }}">
         <span class="log-title">{{ .LinkTitle }}</span>
-        <!-- <span class="log-desc">{{ .Description }}</span> -->
+        <span class="log-desc">{{ .Description }}</span>
       </a>
     </p>
   {{ end }}
