@@ -1,4 +1,5 @@
-function invert_page() {
+function invert_page(event = null, on_load = false) {
+
     let root = document.documentElement;
     let primary_color = getComputedStyle(root).getPropertyValue('--primary-color').trim();
     let secondary_color = getComputedStyle(root).getPropertyValue('--secondary-color').trim();
@@ -9,32 +10,35 @@ function invert_page() {
     let font_color = getComputedStyle(root).getPropertyValue('--font-color').trim();
     let alt_font_color = getComputedStyle(root).getPropertyValue('--alt-font-color').trim();
 
-    let btn_hover_color = getComputedStyle(root).getPropertyValue('--btn-hover-color').trim();
-    let alt_btn_hover_color = getComputedStyle(root).getPropertyValue('--alt-btn-hover-color').trim();
-
     // * Invert Text Logo
     let text_logo = document.getElementById("text_logo");
     let text_logo_alt = document.getElementById("text_logo_alt");
-    let text_logo_display = getComputedStyle(text_logo).getPropertyValue('display').trim();
-    let text_logo_alt_display = getComputedStyle(text_logo_alt).getPropertyValue('display').trim();
-    text_logo.style.display = text_logo_alt_display;
-    text_logo_alt.style.display = text_logo_display;
+    if (text_logo && text_logo_alt) {
+        let text_logo_display = getComputedStyle(text_logo).getPropertyValue('display').trim();
+        let text_logo_alt_display = getComputedStyle(text_logo_alt).getPropertyValue('display').trim();
+        text_logo.style.display = text_logo_alt_display;
+        text_logo_alt.style.display = text_logo_display;
+    }
 
     // * Invert Character Logo
     let character_logo = document.getElementById("character_logo");
-    let src = character_logo.src;
-    let alt_src = src.replace("primary", "alt");
-    if(alt_src == src) {
-        alt_src = src.replace("alt", "primary");
+    if (character_logo) {
+        let src = character_logo.src;
+        let alt_src = src.replace("primary", "alt");
+        if(alt_src == src) {
+            alt_src = src.replace("alt", "primary");
+        }
+        character_logo.src = alt_src;
     }
-    character_logo.src = alt_src;
 
     // * Invert Invert Icon
     let invert_icon = document.getElementById("invert");
-    if(invert_icon.src.includes("primary")) {
-        invert_icon.src = invert_icon.src.replace("primary", "alt");
-    } else {
-        invert_icon.src = invert_icon.src.replace("alt", "primary");
+    if (invert_icon) {
+        if(invert_icon.src.includes("primary")) {
+            invert_icon.src = invert_icon.src.replace("primary", "alt");
+        } else {
+            invert_icon.src = invert_icon.src.replace("alt", "primary");
+        }
     }
 
     root.style.setProperty('--primary-color', alt_primary_color);
@@ -43,6 +47,10 @@ function invert_page() {
     root.style.setProperty('--alt-primary-color', primary_color);
     root.style.setProperty('--alt-secondary-color', secondary_color);
     root.style.setProperty('--alt-font-color', font_color);
+
+    if (!on_load){
+        set_invert_state(!get_invert_state());
+    }
 }
 
 // keybinds for fun
@@ -73,17 +81,30 @@ function handleKeybind(event) {
 
 }
 
-// Add the event listener to the document for keydown events
+function get_invert_state(){
+    let state = sessionStorage.getItem('inverted') === 'true'
+    return state;
+}
+
+function set_invert_state(state){
+    sessionStorage.setItem('inverted', state);
+}
+
 document.addEventListener('keydown', handleKeybind);
 
-// Optional: Remove event listener when the page is unloaded to prevent memory leaks (good practice)
-// window.addEventListener('beforeunload', () => {
-//   document.removeEventListener('keydown', handleKeybind);
-// });
-
-// ! Add code to make the invert sticky for the session
 document.addEventListener("DOMContentLoaded", function() {
+    let is_inverted = get_invert_state();
+
+    if (is_inverted) {
+        invert_page(null, true);
+    }
+
     const invert_btn = document.getElementById("invert");
+    if (!invert_btn){
+        console.error("Failed getting invert btn!");
+        return;
+    }
+
     invert_btn.addEventListener("click", invert_page);
 });
 
