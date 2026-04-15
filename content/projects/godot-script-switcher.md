@@ -6,7 +6,7 @@ title = 'Godot Plugin - Script Switcher'
 
 [params]
     cover_image = '/images/godot_script_switcher_example_1.png'
-    header_image = ''
+    header_image = '/images/godot_script_switcher_example_1.png'
 
 +++
 [Github Link](https://github.com/Travlee/godot-script-switcher)

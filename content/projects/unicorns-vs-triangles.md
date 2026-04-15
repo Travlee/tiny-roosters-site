@@ -7,6 +7,7 @@ description = 'Triangles are attacking the home world of the Unicorns. How long 
 
 [params]
     cover_image = '/images/unicorns-vs-triangles-menu.png'
+    header_image = '/images/unicorns-vs-triangles-menu.png'
 +++
 
 <!-- ![Unicorns vs Triangles](/images/unicorns-vs-triangles-menu.png) -->
