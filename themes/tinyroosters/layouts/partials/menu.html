@@ -4,7 +4,7 @@
 {{ with site.Menus.main }}
   <nav>
     {{ range . }}
-      {{ if $page.IsMenuCurrent .Menu . }}
+      {{ if or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .) }}
         <a class="active-page" aria-current="page" href="{{ .URL }}">{{ .Name }}</a>
       {{ else }}
         <a href="{{ .URL }}">{{ .Name }}</a>
