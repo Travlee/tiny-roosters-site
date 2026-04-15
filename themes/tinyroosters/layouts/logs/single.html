@@ -1,8 +1,8 @@
 {{ define "main" }}
     {{ $date_machine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-    {{ $date_human := .Date | time.Format ":date_long" }}
+    {{ $date_human := .Date.Format "2006-01-02" }}
     {{ $last_mod_machine := .Lastmod.Format "2006-01-02T15:04:05-07:00" }}
-    {{ $last_mod := .Lastmod.Format "January 2, 2006" }}
+    {{ $last_mod := .Lastmod.Format "2006-01-02" }}
 
   <div class="log-title-container">
     <h1>
@@ -15,6 +15,8 @@
     {{ if ne $last_mod $date_human}}
       <p><time datetime="{{ $last_mod_machine }}">updated on {{ $last_mod }}</time></p>
     {{ end }}
+
+    <span class="log-long-desc">{{ .Description }}</span>
   </div>
 
 

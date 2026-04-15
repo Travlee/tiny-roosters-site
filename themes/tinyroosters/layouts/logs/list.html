@@ -9,19 +9,15 @@
   <div class="logs-container">
   {{ range .Pages }}
     {{ $date_machine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-    {{ $date_human := .Date.Format "Jan 02, 2006" }}
-    {{ $temp := printf "%s - %s" $date_human .Title }}
-    {{ $temp := $temp | safeHTML }}
+    {{ $date_human := .Date.Format "2006-01-02" }}
 
-    <p>
-      <span class="log-time">
-        <time datetime="{{ $date_machine }}">{{ $date_human }}</time>:
-      </span>
+    <div class="log-row">
       <a href="{{ .RelPermalink }}" title="{{ .Description }}">
-        <span class="log-title">{{ .LinkTitle }}</span>
+        <span class="log-time"> <time datetime="{{ $date_machine }}">{{ $date_human }}</time></span>:
+        <span class="log-title">{{ .LinkTitle }}</span> -
         <span class="log-desc">{{ .Description }}</span>
       </a>
-    </p>
+    </div>
   {{ end }}
 
   </div>
