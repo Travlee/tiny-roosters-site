@@ -26,4 +26,15 @@ img#invert {
 
 body footer{
     margin-top: 4rem;
+    text-align: center;
+}
+
+#copyright {
+    font-size: var(--14px);
+    margin-top: 2rem;
+    color: var(--font-less-contrast);
+}
+
+.copyright-name{
+    color: var(--primary-color);
 }

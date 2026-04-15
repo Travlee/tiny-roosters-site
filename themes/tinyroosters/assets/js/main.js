@@ -106,6 +106,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     invert_btn.addEventListener("click", invert_page);
+
+    const copyright_current_year = document.getElementById('copyright-current-year');
+    if (copyright_current_year) {
+        copyright_current_year.textContent = new Date().getFullYear();
+    }
 });
 
 
