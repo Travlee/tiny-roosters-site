@@ -1,5 +1,15 @@
 @import url("/css/fonts.css");
 
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  5% { transform: rotate(10deg); }
+  10% { transform: rotate(-10deg); }
+  15% { transform: rotate(10deg); }
+  20% { transform: rotate(0deg); }
+
+  100% { transform: rotate(0deg); }
+}
+
 :root {
     --primary-color: #FEC426;
     --alt-primary-color: #060606;
@@ -134,5 +144,12 @@ main h1, main h2, main h3, main h4 {
 }
 
 .title-prefix a{
+    display: inline-block;
     text-decoration: none;
+
+    animation: wiggle 3s infinite;
+}
+
+.title-prefix a:hover{
+    animation: none;
 }
