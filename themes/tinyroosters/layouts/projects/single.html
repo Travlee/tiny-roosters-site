@@ -7,6 +7,12 @@
       {{ .Title }}
   </h1>
 
+  {{ with .Params.header_image }}
+  <div class="project-header-image">
+    <img src="{{ . | relURL }}" alt="{{ $.Title }} header image">
+  </div>
+  {{ end }}
+
   <article>
     {{ .Content }}
   </article>

@@ -29,3 +29,11 @@
     color: var(--primary-color);
     font-size: 3rem;
 }
+
+.project-header-image{
+    margin-bottom: 2rem;
+}
+
+.project-header-image img{
+    width: 100%;
+}
