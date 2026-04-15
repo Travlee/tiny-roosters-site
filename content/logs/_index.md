@@ -1,7 +1,7 @@
 +++
 title = 'Logs'
 draft = false
-type = 'posts'
+type = 'logs'
 +++
 
-<!-- I don't write often but here they are. -->
+I don't write often but here they are.
