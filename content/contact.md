@@ -4,6 +4,8 @@ draft = true
 title = 'Contact'
 +++
 
-General: [contact@tinyroosters.com](mailto:contact@tinyroosters.com)
-<!-- Support: [support@tinyroosters.com](mailto:support@tinyroosters.com) -->
+General: [lee@tinyroosters.com](mailto:contact@tinyroosters.com)
+
+Issues: [issues@tinyroosters.com](mailto:issues@tinyroosters.com)
+
 Social: [@tinyroosters.bsky.social](https://bsky.app/profile/tinyroosters.bsky.social)
