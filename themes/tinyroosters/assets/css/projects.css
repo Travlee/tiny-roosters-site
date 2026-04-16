@@ -37,3 +37,33 @@
 .project-header-image img{
     width: 100%;
 }
+
+.project-long-desc{
+    display: inline-block;
+    margin-top: 0px;
+    color: var(--font-less-contrast);
+    font-size: var(--14px)
+}
+
+.projects-container{
+    display: grid;
+    color: var(--font-color);
+}
+
+.projects-container a{
+    text-decoration: none;
+}
+
+.projects-container a:hover{
+    text-decoration: underline;
+}
+
+.projects-container a:hover span {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.projects-content{
+    margin-bottom: 20px;
+    color: var(--font-color);
+}

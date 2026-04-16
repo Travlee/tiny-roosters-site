@@ -36,22 +36,9 @@
 
 .logs-container{
     display: grid;
-}
-
-.logs-container{
     color: var(--font-color);
 }
-.log-row{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    color: var(--font-less-contrast);
-    /* margin: 0.25rem 0; */
 
-    font-size: var(--16px);
-
-    margin-bottom: 5px;
-}
 .logs-container a{
     text-decoration: none;
     color: var(--font-color);
@@ -63,22 +50,6 @@
 .logs-container a:hover span {
     color: var(--secondary-color);
     text-decoration: underline;
-}
-
-.log-time{
-    color: var(--font-color);
-    text-decoration: none;
-}
-.log-title{
-    text-decoration: none;
-    /* text-decoration: underline; */
-    /* text-transform: uppercase; */
-    text-decoration-color: var(--primary-color);
-    color: var(--primary-color);
-}
-.log-desc{
-    color: var(--font-less-contrast);
-    text-decoration: none;
 }
 
 .log-long-desc{

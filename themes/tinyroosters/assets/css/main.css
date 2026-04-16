@@ -153,3 +153,29 @@ main h1, main h2, main h3, main h4 {
 .title-prefix a:hover{
     animation: none;
 }
+
+.row{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: var(--font-less-contrast);
+    /* margin: 0.25rem 0; */
+
+    font-size: var(--16px);
+
+    margin-bottom: 5px;
+}
+
+.row-time{
+    color: var(--font-color);
+    text-decoration: none;
+}
+.row-title{
+    text-decoration: none;
+    text-decoration-color: var(--primary-color);
+    color: var(--primary-color);
+}
+.row-desc{
+    color: var(--font-less-contrast);
+    text-decoration: none;
+}
