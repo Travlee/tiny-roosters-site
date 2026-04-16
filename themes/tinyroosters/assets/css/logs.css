@@ -82,8 +82,17 @@
 }
 
 .log-long-desc{
-    display: inline-block;
-    margin-top: 20px;
+    display: block;
+    margin-top: 10px;
     color: var(--font-less-contrast);
-    font-size: var(--14px)
+    font-size: var(--14px);
+    font-style: italic;
+}
+
+.log-single-time{
+    display: block;
+    margin-top: 10px;
+    font-size: var(--12px);
+    font-style: italic;
+    color: var(--font-less-contrast);
 }

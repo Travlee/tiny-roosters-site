@@ -11,9 +11,9 @@
       </span>
       {{ .Title }}
     </h1>
-    <p><time datetime="{{ $date_machine }}">posted on {{ $date_human }}</time></p>
+    <span class="log-single-time"><time datetime="{{ $date_machine }}">posted on {{ $date_human }}</time></span>
     {{ if ne $last_mod $date_human}}
-      <p><time datetime="{{ $last_mod_machine }}">updated on {{ $last_mod }}</time></p>
+      <span class="log-single-time"><time datetime="{{ $last_mod_machine }}">updated on {{ $last_mod }}</time></span>
     {{ end }}
 
     <span class="log-long-desc">{{ .Description }}</span>
