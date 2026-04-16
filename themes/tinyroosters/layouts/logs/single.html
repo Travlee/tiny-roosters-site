@@ -19,10 +19,10 @@
     <span class="log-long-desc">{{ .Description }}</span>
   </div>
 
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 
   <article>
     {{ .Content }}
   </article>
 
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}

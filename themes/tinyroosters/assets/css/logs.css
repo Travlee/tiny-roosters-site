@@ -67,3 +67,57 @@
     font-style: italic;
     color: var(--font-less-contrast);
 }
+
+.terms-container {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: var(--14px);
+}
+
+.terms-label {
+    font-family: 'RedHatDisplay-Black';
+    text-transform: uppercase;
+    color: var(--font-less-contrast);
+}
+
+.terms-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.term-item a {
+    color: var(--primary-color) !important;
+    text-decoration: none !important;
+    border: 1px solid var(--primary-color);
+    padding: 2px 6px;
+    text-transform: lowercase;
+}
+
+.term-item a::before {
+    content: "#";
+    opacity: 0.5;
+    margin-right: 2px;
+}
+
+.term-item a:hover {
+    background-color: var(--primary-color) !important;
+    color: var(--secondary-color) !important;
+}
+
+.row-tag {
+    font-size: var(--12px);
+    color: var(--font-less-contrast) !important;
+    text-decoration: none !important;
+    margin-left: 8px;
+    font-style: italic;
+}
+
+.row-tag:hover {
+    color: var(--primary-color) !important;
+    text-decoration: underline !important;
+}

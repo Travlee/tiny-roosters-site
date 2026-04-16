@@ -17,6 +17,9 @@
         <span class="row-title">{{ .LinkTitle }}</span> -
         <span class="row-desc">{{ .Description }}</span>
       </a>
+      {{ range .GetTerms "tags" }}
+        <a href="{{ .RelPermalink }}" class="row-tag">#{{ .LinkTitle }}</a>
+      {{ end }}
     </div>
   {{ end }}
 
