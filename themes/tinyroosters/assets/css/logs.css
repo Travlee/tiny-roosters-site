@@ -25,9 +25,24 @@
     color: var(--font-less-contrast);
 }
 
-/* .log-title-container a{
-    color: var(--primary-color);
-} */
+.tags-header {
+    margin-bottom: 20px;
+    font-size: var(--14px);
+}
+
+.tags-header a {
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'RedHatDisplay-Black';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tags-header a:hover {
+    color: var(--secondary-color) !important;
+    text-decoration: underline;
+}
 
 .logs-content{
     margin-bottom: 20px;
@@ -120,4 +135,36 @@
 .row-tag:hover {
     color: var(--primary-color) !important;
     text-decoration: underline !important;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    overflow: visible;
+    white-space: normal;
+}
+
+.row > a {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.row-tags {
+    display: none;
+    flex-shrink: 0;
+}
+
+.row:hover .row-tags {
+    display: flex;
+    gap: 8px;
+}
+
+.row-tag {
+    margin-left: 0;
+    background: none !important;
 }

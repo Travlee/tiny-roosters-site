@@ -4,6 +4,10 @@
     <span class="title-prefix"><a href="{{ .Parent.RelPermalink }}"><</a></span> {{ .Title }}
   </h1>
 
+  <div class="tags-header">
+    <a href="{{ "tags" | relURL }}">Explore tags →</a>
+  </div>
+
   <div class="logs-content">{{ .Content }}</div>
 
   <div class="logs-container">
@@ -17,9 +21,11 @@
         <span class="row-title">{{ .LinkTitle }}</span> -
         <span class="row-desc">{{ .Description }}</span>
       </a>
-      {{ range .GetTerms "tags" }}
-        <a href="{{ .RelPermalink }}" class="row-tag">#{{ .LinkTitle }}</a>
-      {{ end }}
+      <div class="row-tags">
+        {{ range .GetTerms "tags" }}
+          <a href="{{ .RelPermalink }}" class="row-tag">#{{ .LinkTitle }}</a>
+        {{ end }}
+      </div>
     </div>
   {{ end }}
 
