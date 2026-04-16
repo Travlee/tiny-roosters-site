@@ -104,6 +104,10 @@ function handle_keydown(event) {
     const key = event.key;
     const lower_key = key.toLowerCase();
 
+    if (event.ctrlKey){
+        return;
+    }
+
     if (key === 'G') {
         document.querySelector('footer').scrollIntoView({ behavior: 'smooth' });
     } else if (key === 'g' && last_key === 'g') {
