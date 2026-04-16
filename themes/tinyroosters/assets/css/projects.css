@@ -31,18 +31,28 @@
 }
 
 .project-header-image{
-    margin-bottom: 2rem;
+    margin-bottom: var(--10px);
 }
 
 .project-header-image img{
     width: 100%;
 }
 
+.project-single-time{
+    display: block;
+    margin-top: var(--10px);
+    font-size: var(--12px);
+    font-style: italic;
+    color: var(--font-less-contrast);
+}
+
 .project-long-desc{
     display: inline-block;
-    margin-top: 0px;
+    margin-top: var(--10px);
     color: var(--font-less-contrast);
-    font-size: var(--14px)
+    font-size: var(--14px);
+    font-style: italic;
+
 }
 
 .projects-container{
@@ -64,6 +74,6 @@
 }
 
 .projects-content{
-    margin-bottom: 20px;
+    margin-bottom: var(--20px);
     color: var(--font-color);
 }

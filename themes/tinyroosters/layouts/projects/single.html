@@ -1,4 +1,6 @@
 {{ define "main" }}
+  {{ $date_machine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $date_human := .Date.Format "2006-01-02" }}
 
   <h1>
       <span class="title-prefix">
@@ -12,6 +14,10 @@
     <img src="{{ . | relURL }}" alt="{{ $.Title }} header image">
   </div>
   {{ end }}
+
+  <span class="project-single-time"><time datetime="{{ $date_machine }}">added on {{ $date_human }}</time></span>
+
+  <span class="project-long-desc">{{ .Description }}</span>
 
   <article>
     {{ .Content }}
