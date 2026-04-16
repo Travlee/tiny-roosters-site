@@ -5,7 +5,7 @@
 </div>
 
 <section>
-    <h1><a href="{{ (site.GetPage "logs").RelPermalink }}">Latest Logs</a></h1>
+    <h1>Latest Logs</h1>
     <div class="logs-container">
         {{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "logs") }}
             {{ $date_machine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
@@ -22,7 +22,7 @@
 </section>
 
 <section>
-    <h1><a href="{{ (site.GetPage "projects").RelPermalink }}">Latest Projects</a></h1>
+    <h1>Latest Projects</h1>
     <div class="projects-container">
         {{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "projects") }}
             {{ $date_machine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
