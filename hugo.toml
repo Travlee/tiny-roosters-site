@@ -24,8 +24,3 @@ theme = "tinyroosters"
     pageRef = '/about'
     url = '/about'
     weight = 30
-  [[menus.main]]
-    name = 'Contact'
-    pageRef = '/contact'
-    url = '/contact'
-    weight = 40

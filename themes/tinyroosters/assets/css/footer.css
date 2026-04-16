@@ -29,9 +29,27 @@ body footer{
     text-align: center;
 }
 
+#footer-contact {
+    margin-top: 2rem;
+    font-size: var(--14px);
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+#footer-contact a {
+    color: var(--font-less-contrast);
+    text-decoration: none;
+}
+
+#footer-contact a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
 #copyright {
     font-size: var(--14px);
-    margin-top: 2rem;
+    margin-top: 1rem;
     color: var(--font-less-contrast);
 }
 
