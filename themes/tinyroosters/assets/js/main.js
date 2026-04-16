@@ -54,31 +54,40 @@ function invert_page(event = null, on_load = false) {
 }
 
 // keybinds for fun
-function handleKeybind(event) {
-    const key = event.key.toLowerCase();
+let last_key = '';
+function handle_keydown(event) {
+    const key = event.key;
+    const lower_key = key.toLowerCase();
 
-    if(key === 'h'){
-        window.location.href = "/";
-    } else if(key === 'r'){
-        window.location.reload();
-    } else if(key === 'a'){
-        window.location.href = "/about";
-    } else if(key === 'c'){
+    if (key === 'G') {
         document.querySelector('footer').scrollIntoView({ behavior: 'smooth' });
-    } else if(key === 'p'){
+    } else if (key === 'g' && last_key === 'g') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    if(lower_key === 'h'){
+        window.location.href = "/";
+    } else if(lower_key === 'r'){
+        window.location.reload();
+    } else if(lower_key === 'a'){
+        window.location.href = "/about";
+    } else if(lower_key === 'c'){
+        document.querySelector('footer').scrollIntoView({ behavior: 'smooth' });
+    } else if(lower_key === 'p'){
         window.location.href = "/projects";
-    } else if(key === 'l'){
+    } else if(lower_key === 'l'){
         window.location.href = "/logs";
-    } else if(key === 'k'){
+    } else if(lower_key === 'k'){
         window.scrollBy(0, -50);
-    } else if(key === 'j'){
+    } else if(lower_key === 'j'){
         window.scrollBy(0, 50);
-    } else if(key === 'i'){
+    } else if(lower_key === 'i'){
         invert_page();
-    } else if(key === '?'){
+    } else if(lower_key === '?'){
         console.log("Keybinds:");
     }
 
+    last_key = key;
 }
 
 function get_invert_state(){
@@ -90,7 +99,7 @@ function set_invert_state(state){
     sessionStorage.setItem('inverted', state);
 }
 
-document.addEventListener('keydown', handleKeybind);
+document.addEventListener('keydown', handle_keydown);
 
 document.addEventListener("DOMContentLoaded", function() {
     let is_inverted = get_invert_state();
@@ -115,4 +124,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // # Console log keybind tips
-console.log("helpful keybinds: [h = home, a = about, c = scroll to contact, l = logs, p = projects, i = invert, j = scroll down, k = scroll up, r = reload, ? = help]");
+console.log("helpful keybinds: [h = home, a = about, c/G = scroll to footer, gg = scroll to top, l = logs, p = projects, i = invert, j = scroll down, k = scroll up, r = reload, ? = help]");
