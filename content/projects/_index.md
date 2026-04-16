@@ -2,4 +2,4 @@
 title = 'Projects'
 +++
 
-<!-- These are all my projects to date. -->
+All active and past projects to date.

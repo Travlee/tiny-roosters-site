@@ -2,8 +2,8 @@
 date = '2025-02-23T16:43:03-06:00'
 title = 'Unicorns vs Triangles'
 type = 'projects'
-draft = false
-description = 'Triangles are attacking the home world of the Unicorns. How long can you defend them!?'
+draft = true
+description = 'Tower defense, auto chess, 2D, with tactics.'
 
 [params]
     cover_image = '/images/unicorns-vs-triangles-menu.png'
