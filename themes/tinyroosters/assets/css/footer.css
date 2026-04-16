@@ -39,7 +39,7 @@ body footer{
 
 #footer-contact a {
     color: var(--font-less-contrast);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 #footer-contact a:hover {
