@@ -55,7 +55,52 @@ function invert_page(event = null, on_load = false) {
 
 // keybinds for fun
 let last_key = '';
+let help_active = false;
+
+function show_help() {
+    if (help_active) return;
+    help_active = true;
+
+    const overlay = document.createElement('div');
+    overlay.id = 'help-overlay';
+    overlay.innerHTML = `
+        <div class="help-content">
+            <h2>Keybinds</h2>
+            <div class="help-grid">
+                <span class="help-key">h</span><span class="help-desc">Home</span>
+                <span class="help-key">a</span><span class="help-desc">About</span>
+                <span class="help-key">l</span><span class="help-desc">Logs</span>
+                <span class="help-key">p</span><span class="help-desc">Projects</span>
+                <span class="help-key">c / G</span><span class="help-desc">Scroll to Footer</span>
+                <span class="help-key">gg</span><span class="help-desc">Scroll to Top</span>
+                <span class="help-key">j</span><span class="help-desc">Scroll Down</span>
+                <span class="help-key">k</span><span class="help-desc">Scroll Up</span>
+                <span class="help-key">i</span><span class="help-desc">Invert Colors</span>
+                <span class="help-key">r</span><span class="help-desc">Reload</span>
+                <span class="help-key">?</span><span class="help-desc">Show Help</span>
+            </div>
+            <div class="help-footer">Press any key or click to close</div>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+}
+
+function hide_help() {
+    const overlay = document.getElementById('help-overlay');
+    if (overlay) {
+        overlay.remove();
+        help_active = false;
+    }
+}
+
 function handle_keydown(event) {
+    if (help_active) {
+        event.preventDefault();
+        event.stopPropagation();
+        hide_help();
+        return;
+    }
+
     const key = event.key;
     const lower_key = key.toLowerCase();
 
@@ -84,10 +129,20 @@ function handle_keydown(event) {
     } else if(lower_key === 'i'){
         invert_page();
     } else if(lower_key === '?'){
-        console.log("Keybinds:");
+        show_help();
     }
 
     last_key = key;
+}
+
+function handle_click(event){
+    if (!help_active){
+        return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+    hide_help();
 }
 
 function get_invert_state(){
@@ -100,6 +155,7 @@ function set_invert_state(state){
 }
 
 document.addEventListener('keydown', handle_keydown);
+document.addEventListener('click', handle_click);
 
 document.addEventListener("DOMContentLoaded", function() {
     let is_inverted = get_invert_state();
