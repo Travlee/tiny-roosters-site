@@ -28,6 +28,7 @@ header img#character_logo {
     min-width: 50px;
     min-height: auto;
     right: 0;
+    cursor: pointer;
 }
 
 body header nav a{

@@ -5,7 +5,7 @@ img#invert {
     right: 0;
     margin: 4em auto 0 auto;
 
-    cursor: pointer;
+    /* cursor: pointer; */
 
     -webkit-animation: spin 20s linear infinite;
     -moz-animation: spin 20s linear infinite;

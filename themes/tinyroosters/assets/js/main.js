@@ -20,7 +20,6 @@ function invert_page(event = null, on_load = false) {
         text_logo_alt.style.display = text_logo_display;
     }
 
-    // * Invert Character Logo
     let character_logo = document.getElementById("character_logo");
     if (character_logo) {
         let src = character_logo.src;
@@ -31,7 +30,6 @@ function invert_page(event = null, on_load = false) {
         character_logo.src = alt_src;
     }
 
-    // * Invert Invert Icon
     let invert_icon = document.getElementById("invert");
     if (invert_icon) {
         if(invert_icon.src.includes("primary")) {
@@ -168,13 +166,30 @@ document.addEventListener("DOMContentLoaded", function() {
         invert_page(null, true);
     }
 
-    const invert_btn = document.getElementById("invert");
-    if (!invert_btn){
-        console.error("Failed getting invert btn!");
-        return;
-    }
+    const character_logo = document.getElementById("character_logo");
+    let character_logo_animation = null;
 
-    invert_btn.addEventListener("click", invert_page);
+    if (character_logo) {
+        character_logo.addEventListener("click", (e) => {
+            invert_page(e);
+
+            if (character_logo_animation) {
+                character_logo_animation.cancel();
+            }
+
+            character_logo_animation = character_logo.animate([
+                { transform: 'rotate(0deg)' },
+                { transform: 'rotate(10deg)', offset: 0.05 },
+                { transform: 'rotate(-10deg)', offset: 0.1 },
+                { transform: 'rotate(10deg)', offset: 0.15 },
+                { transform: 'rotate(0deg)', offset: 0.2 },
+                { transform: 'rotate(0deg)', offset: 1 }
+            ], {
+                duration: 1000,
+                easing: 'ease-in-out'
+            });
+        });
+    }
 
     const copyright_current_year = document.getElementById('copyright-current-year');
     if (copyright_current_year) {
