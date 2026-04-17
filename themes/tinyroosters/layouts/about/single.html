@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <h1>
+    <span class="title-prefix"><a href="{{ .Parent.RelPermalink }}"><</a></span>
+    {{ .Title }}
+  </h1>
+
+  {{ with .Params.description }}
+  <div class="hero">
+    <h2>{{ . }}</h2>
+  </div>
+  {{ end }}
+
+  <article>
+    {{ .Content }}
+  </article>
+
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+{{ end }}
