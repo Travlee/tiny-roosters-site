@@ -250,3 +250,14 @@ main h1, main h2, main h3, main h4 {
     color: var(--font-less-contrast);
     font-style: italic;
 }
+
+.no-decoration{
+    text-decoration: none;
+}
+
+.color-less-contrast{
+    color: var(--font-less-contrast);
+}
+.color-primary{
+    color: var(--primary-color);
+}
