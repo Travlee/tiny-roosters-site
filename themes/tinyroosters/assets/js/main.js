@@ -54,6 +54,42 @@ function invert_page(event = null, on_load = false) {
 // keybinds for fun
 let last_key = '';
 let help_active = false;
+let hints_active = false;
+let hint_elements = [];
+
+function show_hints() {
+    if (hints_active) return;
+    hints_active = true;
+
+    const links = Array.from(document.querySelectorAll('a'));
+    const hint_chars = "asdghjklqwertyuiopzxcvbnm";
+    let hint_idx = 0;
+
+    links.forEach((link) => {
+        const rect = link.getBoundingClientRect();
+        if (rect.width === 0 || rect.height === 0) return;
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+        const hint_text = hint_chars[hint_idx % hint_chars.length];
+        const hint_el = document.createElement('div');
+        hint_el.className = 'link-hint';
+        hint_el.textContent = hint_text;
+
+        // Position relative to the link
+        hint_el.style.top = (rect.top + window.scrollY) + 'px';
+        hint_el.style.left = (rect.left + window.scrollX) + 'px';
+
+        document.body.appendChild(hint_el);
+        hint_elements.push({ el: hint_el, link: link, key: hint_text });
+        hint_idx++;
+    });
+}
+
+function hide_hints() {
+    hint_elements.forEach(h => h.el.remove());
+    hint_elements = [];
+    hints_active = false;
+}
 
 function show_help() {
     if (help_active) return;
@@ -69,13 +105,14 @@ function show_help() {
                 <span class="help-key">a</span><span class="help-desc">About</span>
                 <span class="help-key">l</span><span class="help-desc">Logs</span>
                 <span class="help-key">p</span><span class="help-desc">Projects</span>
-                <span class="help-key">c / G</span><span class="help-desc">Scroll to Footer</span>
+                <span class="help-key">c,  G</span><span class="help-desc">Scroll to Footer</span>
                 <span class="help-key">gg</span><span class="help-desc">Scroll to Top</span>
                 <span class="help-key">j</span><span class="help-desc">Scroll Down</span>
                 <span class="help-key">k</span><span class="help-desc">Scroll Up</span>
                 <span class="help-key">i</span><span class="help-desc">Invert Colors</span>
+                <span class="help-key">f</span><span class="help-desc">Show Links</span>
                 <span class="help-key">r</span><span class="help-desc">Reload</span>
-                <span class="help-key">?</span><span class="help-desc">Show Help</span>
+                <span class="help-key">/, ?</span><span class="help-desc">Show Help</span>
             </div>
             <div class="help-footer">Press any key or click to close</div>
         </div>
@@ -96,6 +133,22 @@ function handle_keydown(event) {
         event.preventDefault();
         event.stopPropagation();
         hide_help();
+        return;
+    }
+
+    if (hints_active) {
+        const key = event.key.toLowerCase();
+        if (key === 'escape') {
+            hide_hints();
+        } else {
+            const hint = hint_elements.find(h => h.key === key);
+            if (hint) {
+                hint.link.click();
+            }
+            hide_hints();
+        }
+        event.preventDefault();
+        event.stopPropagation();
         return;
     }
 
@@ -130,14 +183,20 @@ function handle_keydown(event) {
         window.scrollBy(0, 50);
     } else if(lower_key === 'i'){
         invert_page();
-    } else if(lower_key === '?'){
+    } else if(lower_key === '?' || lower_key === '/'){
         show_help();
+    } else if(lower_key === 'f'){
+        show_hints();
     }
 
     last_key = key;
 }
 
 function handle_click(event){
+    if (hints_active) {
+        hide_hints();
+        return;
+    }
     if (!help_active){
         return;
     }

@@ -276,3 +276,18 @@ main h1, main h2, main h3, main h4 {
 .color-primary{
     color: var(--primary-color);
 }
+
+.link-hint {
+    position: absolute;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: 'RedHatDisplay-Black';
+    font-size: 12px;
+    padding: 1px 4px;
+    border: 1px solid var(--secondary-color);
+    z-index: 10000;
+    pointer-events: none;
+    text-transform: uppercase;
+    border-radius: 2px;
+    line-height: 1.2;
+}
