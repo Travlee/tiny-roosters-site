@@ -53,3 +53,37 @@ main header h1{
 .active-page {
     text-decoration: underline;
 }
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    header > a:first-of-type {
+        order: 1;
+        flex: 0 1 auto;
+    }
+
+    header #character_logo {
+        order: 2;
+        flex: 0 0 auto;
+    }
+
+    header nav {
+        order: 3;
+        flex: 1 0 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+
+    body header nav a {
+        margin: 0;
+        font-size: 0.9rem;
+        flex: 1;
+        text-align: center;
+        padding: 10px 0;
+    }
+    }
