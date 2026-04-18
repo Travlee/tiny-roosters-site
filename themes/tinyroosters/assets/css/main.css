@@ -421,31 +421,43 @@ pre code {
     }
 
     .row > a {
-        flex-wrap: wrap;
-        align-items: flex-start;
-        gap: 4px 8px;
+        display: block;
         width: 100%;
+        line-height: 1.4;
+    }
+
+    .row-arrow {
+        display: inline;
+        margin-right: 4px;
+    }
+
+    .row-time {
+        display: inline;
+        margin-right: 8px;
+        white-space: nowrap;
     }
 
     .row-title {
+        display: inline;
         white-space: normal;
-        flex: 1 1 auto;
         text-overflow: clip;
+        vertical-align: baseline;
     }
 
     .row-desc {
+        display: block;
         white-space: normal;
-        flex: 1 1 100%;
-        margin-left: 28px;
+        margin-left: 0; /* Reset for better mobile space usage */
         margin-top: 4px;
+        padding-left: 24px; /* Slight indentation for the description */
         text-overflow: clip;
     }
 
     .row-tags {
-        margin-left: 28px;
+        margin-left: 24px;
         margin-top: 8px;
         justify-content: flex-start;
         flex-wrap: wrap;
         padding: 0;
     }
-}
+    }
