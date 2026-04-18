@@ -2,11 +2,11 @@
 {{ if not .Params.no_header }}
 
 <a href="/" target="_self">
-    <img src="{{ .Site.BaseURL }}images/text_logo.svg" alt="{{ site.Title }} Text Logo" id="text_logo">
-    <img src="{{ .Site.BaseURL }}images/text_logo_alt.svg" alt="{{ site.Title }} Text Alt Logo" id="text_logo_alt">
+    <img src="/images/text_logo.svg" alt="{{ site.Title }} Text Logo" id="text_logo">
+    <img src="/images/text_logo_alt.svg" alt="{{ site.Title }} Text Alt Logo" id="text_logo_alt">
 </a>
 
 {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 
-<img src="{{ .Site.BaseURL }}images/character_logo_primary.svg" alt="{{ site.Title }} Character Logo" id="character_logo">
+<img src="/images/character_logo_primary.svg" alt="{{ site.Title }} Character Logo" id="character_logo">
 {{ end }}

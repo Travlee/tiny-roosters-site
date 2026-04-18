@@ -1,12 +1,11 @@
-{{- range resources.Match "js/*.js" }}
-  {{- if eq hugo.Environment "development" }}
-    {{- with . | js.Build }}
-      <script src="{{ .RelPermalink }}" defer></script>
-    {{- end }}
-  {{- else }}
-    {{- $opts := dict "minify" true }}
-    {{- with . | js.Build $opts | fingerprint }}
-      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
-    {{- end }}
+{{- $js := resources.Match "js/*.js" | resources.Concat "js/bundle.js" }}
+{{- if eq hugo.Environment "development" }}
+  {{- with $js | js.Build }}
+    <script src="{{ .RelPermalink }}" defer></script>
+  {{- end }}
+{{- else }}
+  {{- $opts := dict "minify" true }}
+  {{- with $js | js.Build $opts | fingerprint }}
+    <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
   {{- end }}
 {{- end }}
