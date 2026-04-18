@@ -314,3 +314,46 @@ main h1, main h2, main h3, main h4 {
     border-radius: 2px;
     line-height: 1.2;
 }
+
+code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-size: 85%;
+    /* font-weight: bold; */
+}
+
+pre {
+    background-color: var(--primary-color) !important;
+    color: var(--secondary-color) !important;
+    padding: 1.5rem;
+    overflow-x: auto;
+    border-radius: 4px;
+    margin: 2rem 0;
+    border: 2px solid var(--secondary-color);
+}
+
+pre code {
+    background-color: transparent !important;
+    color: inherit !important;
+    padding: 0;
+    border-radius: 0;
+    font-size: var(--14px);
+    line-height: 1.6;
+}
+
+.highlight pre {
+    margin: 2rem 0;
+}
+
+.chroma {
+    background-color: var(--primary-color) !important;
+    color: var(--secondary-color) !important;
+}
+
+.chroma .line, .chroma span {
+    color: inherit !important;
+    background-color: transparent !important;
+}

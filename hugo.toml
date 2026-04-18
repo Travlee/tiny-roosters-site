@@ -3,6 +3,10 @@ languageCode = 'en-us'
 title = 'Tiny Roosters'
 theme = "tinyroosters"
 
+[markup]
+  [markup.highlight]
+    noClasses = false
+
 [menus]
   [[menus.main]]
     name = 'Home'
