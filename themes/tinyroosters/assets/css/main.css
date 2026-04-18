@@ -45,6 +45,14 @@
     --h4: 1rem;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
     color: var(--font-color);
     background-color: var(--secondary-color);
@@ -54,6 +62,7 @@ body {
     line-height: 1.4;
     hyphens: auto;
     font-size: var(--16px);
+    overflow-x: hidden;
 }
 
 @media screen and (max-device-width: 950px) {
@@ -153,6 +162,8 @@ article h4 {
 
 main {
     margin-top: 5em;
+    width: 100%;
+    box-sizing: border-box;
 }
 main img {
     max-width: 800px;
@@ -185,11 +196,11 @@ main h1, main h2, main h3, main h4 {
 }
 
 .row {
+    position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 15px;
     margin-bottom: 8px;
+    width: 100%;
 }
 
 .row > a {
@@ -218,7 +229,11 @@ main h1, main h2, main h3, main h4 {
     color: var(--primary-color);
     font-family: 'RedHatDisplay-Black';
     text-transform: uppercase;
-    flex-shrink: 0;
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .row-desc {
@@ -228,6 +243,8 @@ main h1, main h2, main h3, main h4 {
     white-space: nowrap;
     font-size: var(--14px);
     font-style: italic;
+    flex: 1 1 0%;
+    min-width: 0;
 }
 
 .row a:hover * {

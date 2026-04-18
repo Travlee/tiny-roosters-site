@@ -23,8 +23,12 @@
         <span class="row-desc">{{ .Description }}</span>
       </a>
       <div class="row-tags">
-        {{ range .GetTerms "tags" }}
+        {{ $tags := .GetTerms "tags" }}
+        {{ range first 2 $tags }}
           <a href="{{ .RelPermalink }}" class="row-tag">#{{ .LinkTitle }}</a>
+        {{ end }}
+        {{ if not $tags }}
+          <span class="row-tag">??</span>
         {{ end }}
       </div>
     </div>

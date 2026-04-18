@@ -56,13 +56,27 @@
 }
 
 .projects-container{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     color: var(--font-color);
+    width: 100%;
 }
 
 .projects-container a{
     text-decoration: none;
     color: var(--font-color);
+}
+
+.projects-container .row:hover {
+    background-color: var(--primary-color);
+}
+
+.projects-container .row:hover a * {
+    color: var(--secondary-color) !important;
+}
+
+.projects-container .row a:hover {
+    background-color: transparent !important;
 }
 
 .projects-content{

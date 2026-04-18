@@ -1,13 +1,3 @@
-.logs {
-    display: grid;
-    grid-template-columns: 120px 1fr 300px;
-    gap: 10px;
-
-    justify-content: space-between;
-    justify-content: left;
-    align-items: center;
-}
-
 .log-title-container{
     /* display: flex;
     justify-content: space-between;
@@ -50,8 +40,10 @@
 }
 
 .logs-container{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     color: var(--font-color);
+    width: 100%;
 }
 
 .logs-container a{
@@ -119,30 +111,47 @@
     color: var(--secondary-color) !important;
 }
 
-.row-tag {
+.row-tags {
+    display: flex;
+    gap: var(--8px);
+    flex: 0 0 auto;
+    margin-left: auto;
+    padding: 0 var(--8px) 0 var(--8px);
+    justify-content: flex-end;
+}
+
+.row-tag, .row-tag-filler {
     font-size: var(--12px);
     color: var(--font-less-contrast) !important;
     text-decoration: none !important;
-    margin-left: 8px;
     font-style: italic;
+    white-space: nowrap;
+    background: none !important;
+    padding: 0 4px;
+    transition: all 0.2s ease;
 }
 
 .row-tag:hover {
     color: var(--primary-color) !important;
-    text-decoration: underline !important;
+    background-color: var(--secondary-color) !important;
+    text-decoration: none !important;
 }
 
-.row-tags {
-    display: none;
-    flex-shrink: 0;
+.logs-container .row:hover {
+    background-color: var(--primary-color);
 }
 
-.row:hover .row-tags {
-    display: flex;
-    gap: 8px;
+.logs-container .row:hover .row-tag,
+.logs-container .row:hover .row-tag-filler,
+.logs-container .row:hover a * {
+    color: var(--secondary-color) !important;
 }
 
-.row-tag {
-    margin-left: 0;
-    background: none !important;
+.logs-container .row:hover .row-tag:hover {
+    color: var(--primary-color) !important;
+    background-color: var(--secondary-color) !important;
+}
+
+.logs-container .row a:hover {
+    background-color: transparent !important;
 }
