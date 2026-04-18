@@ -195,6 +195,18 @@ main h1, main h2, main h3, main h4 {
     animation: none;
 }
 
+.row-container {
+    display: flex;
+    flex-direction: column;
+    color: var(--font-color);
+    width: 100%;
+}
+
+.row-container a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
 .row {
     position: relative;
     display: flex;
@@ -247,8 +259,23 @@ main h1, main h2, main h3, main h4 {
     min-width: 0;
 }
 
-.row a:hover * {
+.row-container .row:hover {
+    background-color: var(--primary-color);
+}
+
+.row-container .row:hover .row-tag,
+.row-container .row:hover .row-tag-filler,
+.row-container .row:hover a * {
     color: var(--secondary-color) !important;
+}
+
+.row-container .row:hover .row-tag:hover {
+    color: var(--primary-color) !important;
+    background-color: var(--secondary-color) !important;
+}
+
+.row-container .row a:hover {
+    background-color: transparent !important;
 }
 
 #help-overlay {

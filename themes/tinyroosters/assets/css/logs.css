@@ -1,59 +1,3 @@
-.log-title-container{
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
-    margin: 0;
-}
-.log-title-container h1{
-    margin: 0;
-}
-
-.log-title-container p{
-    margin: 0;
-    font-size: var(--12px);
-    font-style: italic;
-    color: var(--font-less-contrast);
-}
-
-.tags-header {
-    margin-bottom: 20px;
-    font-size: var(--14px);
-}
-
-.tags-header a {
-    color: var(--primary-color) !important;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'RedHatDisplay-Black';
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.tags-header a:hover {
-    color: var(--secondary-color) !important;
-    text-decoration: underline;
-}
-
-.logs-content{
-    margin-bottom: 20px;
-    color: var(--font-color);
-}
-
-.logs-container{
-    display: flex;
-    flex-direction: column;
-    color: var(--font-color);
-    width: 100%;
-}
-
-.logs-container a{
-    text-decoration: none;
-    color: var(--font-color);
-}
-.logs-container a:hover{
-    text-decoration: underline;
-}
-
 .log-long-desc{
     display: block;
     margin-top: 10px;
@@ -137,21 +81,26 @@
     text-decoration: none !important;
 }
 
-.logs-container .row:hover {
-    background-color: var(--primary-color);
+.tags-header {
+    margin-bottom: 20px;
+    font-size: var(--14px);
 }
 
-.logs-container .row:hover .row-tag,
-.logs-container .row:hover .row-tag-filler,
-.logs-container .row:hover a * {
-    color: var(--secondary-color) !important;
-}
-
-.logs-container .row:hover .row-tag:hover {
+.tags-header a {
     color: var(--primary-color) !important;
-    background-color: var(--secondary-color) !important;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'RedHatDisplay-Black';
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.logs-container .row a:hover {
-    background-color: transparent !important;
+.tags-header a:hover {
+    color: var(--secondary-color) !important;
+    text-decoration: underline;
+}
+
+.logs-content{
+    margin-bottom: 20px;
+    color: var(--font-color);
 }

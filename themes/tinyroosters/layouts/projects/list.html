@@ -6,7 +6,7 @@
 
   <div class="projects-content">{{ .Content }}</div>
 
-  <div class="projects-container">
+  <div class="row-container">
 
   {{ range where .Pages "Type" "projects" }}
   {{ $date_machine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}

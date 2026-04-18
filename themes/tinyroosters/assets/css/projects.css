@@ -1,35 +1,3 @@
-
-.project-item{
-    max-width: 500px;
-    max-height: auto;
-}
-
-.project-item img{
-    max-width: 100%;
-}
-
-.project-item img:hover{
-    /* box-shadow:inset 0px 0px 0px 50px var(--primary-color); */
-}
-
-.project-item a{
-    opacity: 1;
-    transition: .25s ease;
-}
-
-.project-item a:hover{
-    background: none;
-    opacity: 0.5;
-    filter: blur(0.5px);
-}
-
-
-.project-item-cover-title{
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    font-size: 3rem;
-}
-
 .project-header-image{
     margin-bottom: var(--10px);
 }
@@ -53,30 +21,6 @@
     font-size: var(--14px);
     font-style: italic;
 
-}
-
-.projects-container{
-    display: flex;
-    flex-direction: column;
-    color: var(--font-color);
-    width: 100%;
-}
-
-.projects-container a{
-    text-decoration: none;
-    color: var(--font-color);
-}
-
-.projects-container .row:hover {
-    background-color: var(--primary-color);
-}
-
-.projects-container .row:hover a * {
-    color: var(--secondary-color) !important;
-}
-
-.projects-container .row a:hover {
-    background-color: transparent !important;
 }
 
 .projects-content{

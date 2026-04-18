@@ -3,7 +3,7 @@
     <span class="title-prefix"><a href="{{ "logs" | relURL }}"><</a></span> {{ .Title }}
   </h1>
 
-  <div class="logs-container terms-page-container">
+  <div class="row-container terms-page-container">
     {{ range .Data.Terms.ByCount }}
       <div class="row">
         <a href="{{ .Page.RelPermalink }}">

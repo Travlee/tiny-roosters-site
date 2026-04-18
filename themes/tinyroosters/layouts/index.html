@@ -6,7 +6,7 @@
 
 <section>
     <h1>Latest Logs</h1>
-    <div class="logs-container">
+    <div class="row-container">
         {{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "logs") }}
             {{ $date_machine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
             {{ $date_human := .Date.Format "2006-01-02" }}
@@ -33,7 +33,7 @@
 
 <section>
     <h1>Latest Projects</h1>
-    <div class="projects-container">
+    <div class="row-container">
         {{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "projects") }}
             {{ $date_machine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
             {{ $date_human := .Date.Format "2006-01-02" }}
