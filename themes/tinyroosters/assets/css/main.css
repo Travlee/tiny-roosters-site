@@ -409,3 +409,43 @@ pre code {
     color: inherit !important;
     background-color: transparent !important;
 }
+
+/* Mobile Row Redesign */
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--font-less-contrast-2);
+    }
+
+    .row > a {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 4px 8px;
+        width: 100%;
+    }
+
+    .row-title {
+        white-space: normal;
+        flex: 1 1 auto;
+        text-overflow: clip;
+    }
+
+    .row-desc {
+        white-space: normal;
+        flex: 1 1 100%;
+        margin-left: 28px;
+        margin-top: 4px;
+        text-overflow: clip;
+    }
+
+    .row-tags {
+        margin-left: 28px;
+        margin-top: 8px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+}
