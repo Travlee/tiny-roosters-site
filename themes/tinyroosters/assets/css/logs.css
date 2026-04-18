@@ -72,7 +72,6 @@
     white-space: nowrap;
     background: none !important;
     padding: 0 4px;
-    transition: all 0.2s ease;
 }
 
 .row-tag:hover {
