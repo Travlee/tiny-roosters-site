@@ -19,6 +19,7 @@
     --btn-hover-color: #FEC426;
     --font-less-contrast: #787478;
     --font-less-contrast-2: #362700;
+    --alt-font-less-contrast-2: #d4a017;
     --alt-btn-hover-color: #362700;
     --link-color: #FEC426;
     --alt-link-color: #362700;
@@ -97,6 +98,17 @@ body main a:hover {
     margin-bottom: 3rem;
     border-left: 4px solid var(--primary-color);
     padding-left: 1.5rem;
+}
+
+.site-hint {
+    color: var(--font-less-contrast-2);
+    font-size: var(--14px);
+    margin-top: 5rem;
+}
+
+.site-hint code {
+    color: inherit;
+    /* background-color: transparent; */
 }
 
 .hero h2 {
@@ -319,10 +331,6 @@ main h1, main h2, main h3, main h4 {
 .help-key {
     font-family: 'RedHatDisplay-Black';
     text-align: right;
-}
-
-.help-desc {
-    /* color: var(--font-color); */
 }
 
 .help-footer {

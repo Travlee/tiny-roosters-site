@@ -10,6 +10,9 @@ function invert_page(event = null, on_load = false) {
     let font_color = getComputedStyle(root).getPropertyValue('--font-color').trim();
     let alt_font_color = getComputedStyle(root).getPropertyValue('--alt-font-color').trim();
 
+    let hint_color = getComputedStyle(root).getPropertyValue('--font-less-contrast-2').trim();
+    let alt_hint_color = getComputedStyle(root).getPropertyValue('--alt-font-less-contrast-2').trim();
+
     // * Invert Text Logo
     let text_logo = document.getElementById("text_logo");
     let text_logo_alt = document.getElementById("text_logo_alt");
@@ -45,6 +48,8 @@ function invert_page(event = null, on_load = false) {
     root.style.setProperty('--alt-primary-color', primary_color);
     root.style.setProperty('--alt-secondary-color', secondary_color);
     root.style.setProperty('--alt-font-color', font_color);
+    root.style.setProperty('--font-less-contrast-2', alt_hint_color);
+    root.style.setProperty('--alt-font-less-contrast-2', hint_color);
 
     if (!on_load){
         set_invert_state(!get_invert_state());
@@ -105,14 +110,14 @@ function show_help() {
                 <span class="help-key">a</span><span class="help-desc">About</span>
                 <span class="help-key">l</span><span class="help-desc">Logs</span>
                 <span class="help-key">p</span><span class="help-desc">Projects</span>
-                <span class="help-key">c,  G</span><span class="help-desc">Scroll to Footer</span>
+                <span class="help-key">c/G</span><span class="help-desc">Scroll to Footer</span>
                 <span class="help-key">gg</span><span class="help-desc">Scroll to Top</span>
                 <span class="help-key">j</span><span class="help-desc">Scroll Down</span>
                 <span class="help-key">k</span><span class="help-desc">Scroll Up</span>
                 <span class="help-key">i</span><span class="help-desc">Invert Colors</span>
                 <span class="help-key">f</span><span class="help-desc">Show Links</span>
                 <span class="help-key">r</span><span class="help-desc">Reload</span>
-                <span class="help-key">/, ?</span><span class="help-desc">Show Help</span>
+                <span class="help-key">?</span><span class="help-desc">Show Help</span>
             </div>
             <div class="help-footer">Press any key or click to close</div>
         </div>
@@ -183,7 +188,7 @@ function handle_keydown(event) {
         window.scrollBy(0, 50);
     } else if(lower_key === 'i'){
         invert_page();
-    } else if(lower_key === '?' || lower_key === '/'){
+    } else if(lower_key === '?'){
         show_help();
     } else if(lower_key === 'f'){
         show_hints();

@@ -20,3 +20,7 @@ Feel feel to reach out via the links below!
 * **Issues** :: [issues@tinyroosters.com](mailto:issues@tinyroosters.com)
 * **Social** :: [tinyroosters@bsky](https://bsky.app/profile/tinyroosters.bsky.social)
 * **Github** :: [github/Travlee](https://github.com/Travlee)
+
+{{< hint >}}
+Completely unnecessary but fun things are available throughout the site. Press `?` at any time to see the available commands.
+{{< /hint >}}
