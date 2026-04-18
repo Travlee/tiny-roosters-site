@@ -184,30 +184,54 @@ main h1, main h2, main h3, main h4 {
     animation: none;
 }
 
-.row{
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.row > a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none !important;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    padding: 2px 0;
+}
+
+.row-arrow {
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.row-time {
+    color: var(--font-color);
+    font-size: var(--14px);
+    flex-shrink: 0;
+}
+
+.row-title {
+    color: var(--primary-color);
+    font-family: 'RedHatDisplay-Black';
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.row-desc {
+    color: var(--font-less-contrast);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    color: var(--font-less-contrast);
-    /* margin: 0.25rem 0; */
-
-    font-size: var(--16px);
-
-    margin-bottom: 5px;
+    font-size: var(--14px);
+    font-style: italic;
 }
 
-.row-time{
-    color: var(--font-color);
-    text-decoration: none;
-}
-.row-title{
-    text-decoration: none;
-    text-decoration-color: var(--primary-color);
-    color: var(--primary-color);
-}
-.row-desc{
-    color: var(--font-less-contrast);
-    text-decoration: none;
+.row a:hover * {
+    color: var(--secondary-color) !important;
 }
 
 #help-overlay {
@@ -238,6 +262,7 @@ main h1, main h2, main h3, main h4 {
     margin-top: 0;
     text-align: center;
     text-transform: uppercase;
+    font-family: 'RedHatDisplay-Black';
 }
 
 .help-grid {

@@ -65,15 +65,6 @@
     color: var(--font-color);
 }
 
-.projects-container a:hover{
-    text-decoration: underline;
-}
-
-.projects-container a:hover span {
-    color: var(--secondary-color);
-    text-decoration: underline;
-}
-
 .projects-content{
     margin-bottom: var(--20px);
     color: var(--font-color);

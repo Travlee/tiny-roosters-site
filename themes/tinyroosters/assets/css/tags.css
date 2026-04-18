@@ -12,16 +12,3 @@
     color: var(--primary-color);
     text-decoration: underline;
 }
-
-.row-tag-name {
-    font-family: 'RedHatDisplay-Black';
-    text-transform: lowercase;
-    color: var(--primary-color);
-}
-
-.row-tag-count {
-    color: var(--font-less-contrast);
-    font-size: var(--14px);
-    font-style: italic;
-    margin-left: 10px;
-}

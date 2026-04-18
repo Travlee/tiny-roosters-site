@@ -62,11 +62,6 @@
     text-decoration: underline;
 }
 
-.logs-container a:hover span {
-    color: var(--secondary-color);
-    text-decoration: underline;
-}
-
 .log-long-desc{
     display: block;
     margin-top: 10px;
@@ -135,23 +130,6 @@
 .row-tag:hover {
     color: var(--primary-color) !important;
     text-decoration: underline !important;
-}
-
-.row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    overflow: visible;
-    white-space: normal;
-}
-
-.row > a {
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .row-tags {

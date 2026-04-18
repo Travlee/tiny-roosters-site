@@ -1,14 +1,15 @@
 {{ define "main" }}
   <h1>
-    <span class="title-prefix"><a href="/"><</a></span> {{ .Title }}
+    <span class="title-prefix"><a href="{{ "logs" | relURL }}"><</a></span> {{ .Title }}
   </h1>
 
   <div class="logs-container terms-page-container">
     {{ range .Data.Terms.ByCount }}
       <div class="row">
         <a href="{{ .Page.RelPermalink }}">
-          <span class="row-tag-name"><span class="color-less-contrast">#</span>{{ .Page.LinkTitle }}</span>
-          <span class="row-tag-count">({{ .Count }} posts)</span>
+          <span class="row-arrow">→</span>
+          <span class="row-title"><span class="color-less-contrast">#</span>{{ .Page.LinkTitle }}</span>
+          <span class="row-desc">({{ .Count }} posts)</span>
         </a>
       </div>
     {{ end }}
