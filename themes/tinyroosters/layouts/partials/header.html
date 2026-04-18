@@ -1,5 +1,5 @@
 {{- /* Disabled on Home for nice splash */ -}}
-{{ if not .Params.no_header }}
+{{ if and (not .Params.no_header) (ne .Kind "404") }}
 
 <a href="/" target="_self">
     <img src="/images/text_logo.svg" alt="{{ site.Title }} Text Logo" id="text_logo">

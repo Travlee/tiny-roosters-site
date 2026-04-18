@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
-<head>
-  {{ partial "head.html" . }}
-</head>
-<body>
-  <header>
-    {{ partial "header.html" . }}
-  </header>
-  <main>
-    <!-- {{ block "main" . }}{{ end }} -->
-    SHIT NOT HERE YO
-  </main>
-  <footer>
-    {{ partial "footer.html" . }}
-  </footer>
-</body>
-</html>
+{{ define "main" }}
+<div class="error-container">
+    <div class="error-splash">
+        <img src="/images/character_logo_primary.svg" alt="404 character logo" id="character_logo">
+    </div>
+    <div class="error-content">
+        <h1>404</h1>
+        <h2>Missing content</h2>
+        <p>The page you're looking for seems to have flown the coop. We couldn't find it anywhere.</p>
+        <a href="/" class="back-home">Return to Safety</a>
+    </div>
+</div>
+{{ end }}
