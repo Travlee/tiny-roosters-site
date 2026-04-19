@@ -3,14 +3,14 @@ date = '2025-02-23T16:43:03-06:00'
 title = 'Unicorns vs Triangles'
 type = 'projects'
 draft = true
-description = 'Tower defense, auto chess, 2D, with tactics.'
+description = '2D tower defense, auto chess, with tactics.'
 
 [params]
-    cover_image = '/images/unicorns-vs-triangles-menu.png'
-    header_image = '/images/unicorns-vs-triangles-menu.png'
+    cover_image = 'unicorns-vs-triangles-menu.png'
+    header_image = 'unicorns-vs-triangles-menu.png'
 +++
 
-<!-- ![Unicorns vs Triangles](/images/unicorns-vs-triangles-menu.png) -->
+<!-- ![Unicorns vs Triangles](unicorns-vs-triangles-menu.png) -->
 
 # Story
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis dui leo, et ullamcorper justo suscipit nec. Phasellus bibendum sem leo, congue vulputate ligula lacinia at. Curabitur tempor facilisis est, et maximus nunc elementum vel. Donec at metus a urna congue bibendum. Ut sollicitudin odio a viverra semper. Ut ut leo arcu. Integer condimentum sodales eros, id dapibus orci auctor a. Vestibulum nec ante id odio rutrum imperdiet. Ut mattis mollis libero vel varius. Praesent efficitur, massa sit amet consectetur dapibus, nulla neque dapibus mauris, tempus rutrum justo quam id turpis. Nullam lorem elit, scelerisque at posuere eget, faucibus congue ex. Nulla a sodales ex, eget consequat tellus. Fusce non eros imperdiet, congue mi eget, consequat mauris. In sodales pretium nibh quis iaculis. Pellentesque quis ligula mauris.

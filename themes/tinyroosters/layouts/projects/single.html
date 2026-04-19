@@ -10,8 +10,13 @@
   </h1>
 
   {{ with .Params.header_image }}
+  {{ $image := $.Resources.GetMatch . }}
   <div class="project-header-image">
-    <img src="{{ . | relURL }}" alt="{{ $.Title }} header image">
+    {{ if $image }}
+      <img src="{{ $image.RelPermalink }}" alt="{{ $.Title }} header image">
+    {{ else }}
+      <img src="{{ . | relURL }}" alt="{{ $.Title }} header image">
+    {{ end }}
   </div>
   {{ end }}
 

@@ -6,9 +6,9 @@ title = 'Godot Script Switcher Plugin'
 description = "Plugin for the Godot Game Engine to implement VSCode's Quick Open for MRU files created with godot-cpp."
 
 [params]
-    cover_image = ''
+    cover_image = 'godot_script_switcher_example_1.png'
     header_image = 'godot_script_switcher_example_1.png'
-    # repo_link = "https://github.com/Travlee/godot-script-switcher"
+    repo_link = "https://github.com/Travlee/godot-script-switcher"
 +++
 
 ## What is it?
