@@ -1,7 +1,11 @@
 baseURL = 'https://tinyroosters.com'
 languageCode = 'en-us'
 title = 'Tiny Roosters'
-theme = "tinyroosters"
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.116.0"
 
 [markup]
   [markup.highlight]
