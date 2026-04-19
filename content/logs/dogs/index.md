@@ -5,9 +5,10 @@ title = 'Dogs'
 description = 'This post is all about dogs. Not every dog, but all about them. Make this super long to test out the overflowing on the list page.'
 type = 'logs'
 summary = 'Temp summary for post'
+tags = ['dogs', 'pets', 'animals']
 +++
 
-# This is all about dogs!
+## This is all about dogs!
 Well, not all dogs, though. But some dogs!
 
 ## Breeds

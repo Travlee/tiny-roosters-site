@@ -4,6 +4,7 @@ draft = false
 title = 'Initial Post'
 type = 'logs'
 description = "This is unnecessary but heres my initial post desc."
+tags = ["meta", "site"]
 +++
 
 # Low content
