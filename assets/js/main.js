@@ -61,21 +61,27 @@ let last_key = '';
 let help_active = false;
 let hints_active = false;
 let hint_elements = [];
+let hint_buffer = '';
+const hint_chars = "sdcgjkqwertyuiozxvbnm";
 
 function show_hints() {
     if (hints_active) return;
     hints_active = true;
+    hint_buffer = '';
 
-    const links = Array.from(document.querySelectorAll('a'));
-    const hint_chars = "asdghjklqwertyuiopzxcvbnm";
-    let hint_idx = 0;
-
-    links.forEach((link) => {
+    const links = Array.from(document.querySelectorAll('a')).filter(link => {
         const rect = link.getBoundingClientRect();
-        if (rect.width === 0 || rect.height === 0) return;
-        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+        return rect.width > 0 && rect.height > 0 && rect.bottom >= 0 && rect.top <= window.innerHeight;
+    });
 
-        const hint_text = hint_chars[hint_idx % hint_chars.length];
+    const use_double = links.length > hint_chars.length;
+
+    links.forEach((link, i) => {
+        const rect = link.getBoundingClientRect();
+        const hint_text = use_double
+            ? hint_chars[Math.floor(i / hint_chars.length) % hint_chars.length] + hint_chars[i % hint_chars.length]
+            : hint_chars[i % hint_chars.length];
+
         const hint_el = document.createElement('div');
         hint_el.className = 'link-hint';
         hint_el.textContent = hint_text;
@@ -86,7 +92,6 @@ function show_hints() {
 
         document.body.appendChild(hint_el);
         hint_elements.push({ el: hint_el, link: link, key: hint_text });
-        hint_idx++;
     });
 }
 
@@ -94,6 +99,7 @@ function hide_hints() {
     hint_elements.forEach(h => h.el.remove());
     hint_elements = [];
     hints_active = false;
+    hint_buffer = '';
 }
 
 function show_help() {
@@ -145,11 +151,23 @@ function handle_keydown(event) {
         const key = event.key.toLowerCase();
         if (key === 'escape') {
             hide_hints();
-        } else {
-            const hint = hint_elements.find(h => h.key === key);
-            if (hint) {
-                hint.link.click();
+        } else if (hint_chars.includes(key)) {
+            hint_buffer += key;
+            const matches = hint_elements.filter(h => h.key.startsWith(hint_buffer));
+
+            if (matches.length === 1 && matches[0].key === hint_buffer) {
+                matches[0].link.click();
+                hide_hints();
+            } else if (matches.length === 0) {
+                hide_hints();
+            } else {
+                hint_elements.forEach(h => {
+                    if (!h.key.startsWith(hint_buffer)) {
+                        h.el.style.display = 'none';
+                    }
+                });
             }
+        } else {
             hide_hints();
         }
         event.preventDefault();
