@@ -1,7 +1,7 @@
 name: S3 Deployment
 
 on:
-  pull_request:
+  push:
     branches:
       - release
 
@@ -10,7 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+        extended: false
+
+    - name: Build Hugo site
+      run: hugo --minify
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
@@ -19,12 +28,9 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ vars.AWS_REGION }}
 
-    - name: Install AWS CLI
-      run: sudo apt-get install -y awscli
-
     - name: Sync files to S3
       run: |
-        aws s3 sync ./ s3://${{ secrets.AWS_S3_BUCKET }} --delete
+        aws s3 sync ./public/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
 
     - name: Invalidate CloudFront Cache
       run: |
@@ -37,3 +43,5 @@ jobs:
                       "/*"
                   ]
               },
+              "CallerReference": "${{ github.sha }}"
+          }'
