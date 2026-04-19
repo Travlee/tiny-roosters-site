@@ -8,10 +8,10 @@
     min-height: 60vh;
 }
 
-.error-splash img {
+.error-splash #character_logo {
     width: 250px;
     height: auto;
-    margin-bottom: 2.5rem;
+    margin: 0 0 2.5rem 0;
 }
 
 .error-content h1 {
@@ -57,7 +57,7 @@
         font-size: 3.5rem;
     }
     
-    .error-splash img {
+    .error-splash #character_logo {
         width: 180px;
     }
 }

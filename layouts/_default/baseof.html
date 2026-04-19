@@ -10,8 +10,10 @@
   <main>
     {{ block "main" . }}{{ end }}
   </main>
+  {{ if ne .Kind "404" }}
   <footer>
     {{ partial "footer.html" . }}
   </footer>
+  {{ end }}
 </body>
 </html>
