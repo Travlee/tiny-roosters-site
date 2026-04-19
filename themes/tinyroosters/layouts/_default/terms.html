@@ -6,11 +6,9 @@
   <div class="row-container terms-page-container">
     {{ range .Data.Terms.ByCount }}
       <div class="row">
-        <a href="{{ .Page.RelPermalink }}">
-          <span class="row-arrow">→</span>
-          <span class="row-title"><span class="color-less-contrast">#</span>{{ .Page.LinkTitle }}</span>
-          <span class="row-desc">({{ .Count }} posts)</span>
-        </a>
+        <span class="row-arrow">→</span>
+        <a href="{{ .Page.RelPermalink }}" class="row-title-link color-primary"><span class="color-less-contrast">#</span>{{ .Page.LinkTitle }}</a>
+        <div class="row-desc">({{ .Count }} posts)</div>
       </div>
     {{ end }}
   </div>

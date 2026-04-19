@@ -60,8 +60,10 @@
     gap: var(--8px);
     flex: 0 0 auto;
     margin-left: auto;
-    padding: 0 var(--8px) 0 var(--8px);
-    justify-content: flex-end;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    margin-right: 5px;
 }
 
 .row-tag, .row-tag-filler {
