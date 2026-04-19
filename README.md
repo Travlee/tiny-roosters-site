@@ -5,11 +5,7 @@
 <h1 align="center">TinyRoosters.com</h1>
 
 <p align="center">
-  <b>Tiny Roosters Game Studio Site</b>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/github/license/travlee/tiny-roosters-site" alt="License">
+  <b>Tiny Roosters Game Studio - Site</b>
 </p>
 
 **Tiny Roosters** is my attempt at independent game development. Built with [Hugo](https://gohugo.io/) as I really did not want nor need a backend, and because I wanted to finish this fast so I can focus on what I actually like doing - which is not webdesign. Also, Hugo is super neat.
@@ -33,7 +29,7 @@ This static site is hosted and deployed using simple infra on AWS.
 
 ## Purpose
 
-The site serves as a central hub for:
+The site serves as a hub for:
 - **Games & Projects:** Games and other programming projects I want to share.
 - **Logs:** Docs on processes, devlops, updates, and thoughts mostly.
 
