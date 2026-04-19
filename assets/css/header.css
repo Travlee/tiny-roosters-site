@@ -3,6 +3,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    margin-top: 2em;
 }
 
 header img#text_logo {
@@ -63,11 +64,6 @@ main header h1{
     header > a:first-of-type {
         order: 1;
         flex: 0 1 auto;
-    }
-
-    header #character_logo {
-        order: 2;
-        flex: 0 0 auto;
     }
 
     header nav {

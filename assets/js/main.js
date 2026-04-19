@@ -33,15 +33,6 @@ function invert_page(event = null, on_load = false) {
         character_logo.src = alt_src;
     }
 
-    let invert_icon = document.getElementById("invert");
-    if (invert_icon) {
-        if(invert_icon.src.includes("primary")) {
-            invert_icon.src = invert_icon.src.replace("primary", "alt");
-        } else {
-            invert_icon.src = invert_icon.src.replace("alt", "primary");
-        }
-    }
-
     root.style.setProperty('--primary-color', alt_primary_color);
     root.style.setProperty('--secondary-color', alt_secondary_color);
     root.style.setProperty('--font-color', alt_font_color);

@@ -1,31 +1,18 @@
-img#invert {
+#character_logo {
     display: block;
-    bottom: 20px;
-    left: 0;
-    right: 0;
     margin: 4em auto 0 auto;
+    width: 60px;
+    height: auto;
+    cursor: pointer;
 
-    /* cursor: pointer; */
-
-    -webkit-animation: spin 20s linear infinite;
+    /* -webkit-animation: spin 20s linear infinite;
     -moz-animation: spin 20s linear infinite;
-    animation: spin 20s linear infinite;
-}
-@-moz-keyframes spin {
-    100% { -moz-transform: rotate(360deg); }
-}
-@-webkit-keyframes spin {
-    100% { -webkit-transform: rotate(360deg); }
-}
-@keyframes spin {
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform:rotate(360deg);
-    }
+    animation: spin 20s linear infinite; */
 }
 
 body footer{
-    margin-top: 10rem;
+    margin-top: 4rem;
+    padding-bottom: 2rem;
     text-align: center;
 }
 
