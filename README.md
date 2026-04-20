@@ -2,7 +2,7 @@
   <img src="static/images/character_logo_primary.svg" alt="TR Character Logo" width="128" height="128" />
 </p>
 
-<h1 align="center">TinyRoosters.com</h1>
+<a href="https://tinyroosters.com" target="_blank" rel="noopener noreferrer"><h1 align="center">TinyRoosters.com</h1></a>
 
 <p align="center">
   <b>Tiny Roosters Game Studio - Site</b>
@@ -14,7 +14,8 @@
 
 - **[Hugo](https://gohugo.io/)**
 - **HTML5 & Vanilla CSS**
-- **JavaScript**
+- **Vanilla JavaScript**
+- **[Umami](https://umami.is/)** analytics
 
 ## Infrastructure Design
 
@@ -30,9 +31,10 @@ This static site is hosted and deployed using simple infra on AWS.
 ## Purpose
 
 The site serves as a hub for:
-- **Games & Projects:** Games and other programming projects I want to share.
-- **Logs:** Docs on processes, devlops, updates, and thoughts mostly.
-
+- **Games & Projects**
+- **Updates**
+- **Process docs**
+- **Maybe more**
 
 ## License
 
