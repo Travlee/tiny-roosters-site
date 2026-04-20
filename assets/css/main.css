@@ -38,6 +38,8 @@
     --alt-link-color: #362700;
     --link-visited-color: #FEC426;
     --alt-link-visited-color: #FEC426;
+    --title-prefix-color: #FEC426;
+    --alt-title-prefix-color: #362700;
 
     --8px: 0.5rem;
     --10px: 0.625rem;
@@ -243,13 +245,14 @@ main h1, main h2, main h3, main h4 {
 }
 
 .title-prefix{
-    color: var(--primary-color);
+    color: var(--title-prefix-color) !important;
     cursor: pointer;
 }
 
 .title-prefix a{
     display: inline-block;
     text-decoration: none;
+    color: inherit !important;
 
     animation: wiggle 3s infinite;
 }

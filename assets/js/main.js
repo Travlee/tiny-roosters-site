@@ -13,6 +13,9 @@ function invert_page(event = null, on_load = false) {
     let hint_color = getComputedStyle(root).getPropertyValue('--font-less-contrast-2').trim();
     let alt_hint_color = getComputedStyle(root).getPropertyValue('--alt-font-less-contrast-2').trim();
 
+    let prefix_color = getComputedStyle(root).getPropertyValue('--title-prefix-color').trim();
+    let alt_prefix_color = getComputedStyle(root).getPropertyValue('--alt-title-prefix-color').trim();
+
     // * Invert Text Logo
     let text_logo = document.getElementById("text_logo");
     let text_logo_alt = document.getElementById("text_logo_alt");
@@ -41,6 +44,8 @@ function invert_page(event = null, on_load = false) {
     root.style.setProperty('--alt-font-color', font_color);
     root.style.setProperty('--font-less-contrast-2', alt_hint_color);
     root.style.setProperty('--alt-font-less-contrast-2', hint_color);
+    root.style.setProperty('--title-prefix-color', alt_prefix_color);
+    root.style.setProperty('--alt-title-prefix-color', prefix_color);
 
     if (!on_load){
         set_invert_state(!get_invert_state());
