@@ -5,43 +5,70 @@ on:
     branches:
       - release
 
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for manual run.'
+        required: false
+        default: 'Manual update.'
+
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: 'latest'
-        extended: false
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: false
 
-    - name: Build Hugo site
-      run: hugo --minify
+      - name: Build Hugo site
+        run: hugo --minify
 
-    - name: Configure AWS
-      uses: aws-actions/configure-aws-credentials@v6.1.0
-      with:
-        aws-region: ${{ vars.AWS_REGION }}
-        role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-        role-session-name: GHActionBuildTRSite
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hugo-site
+          path: public/
 
-    - name: Sync files to S3
-      run: |
-        aws s3 sync ./public/ s3://${{ vars.S3_BUCKET }} --delete
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: hugo-site
+          path: public/
 
-    - name: Invalidate CloudFront Cache
-      run: |
-        aws cloudfront create-invalidation \
-          --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} \
-          --invalidation-batch '{
-              "Paths": {
-                  "Quantity": 1,
-                  "Items": [
-                      "/*"
-                  ]
-              },
-              "CallerReference": "${{ github.sha }}"
-          }'
+      - name: Configure AWS
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-session-name: GHActionBuildTRSite
+
+      - name: Sync files to S3
+        run: |
+          aws s3 sync ./public/ s3://${{ vars.S3_BUCKET }} --delete
+
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} \
+            --invalidation-batch '{
+                "Paths": {
+                    "Quantity": 1,
+                    "Items": [
+                        "/*"
+                    ]
+                },
+                "CallerReference": "${{ github.sha }}"
+            }'
