@@ -2,6 +2,11 @@ baseURL = 'https://tinyroosters.com'
 languageCode = 'en-us'
 title = 'Tiny Roosters'
 
+[params.analytics.umami]
+  enabled = true
+  url = "https://cloud.umami.is/script.js"
+  website_id = "92c79604-c335-40b6-b364-a8be1019aa33"
+
 [module]
   [module.hugoVersion]
     extended = false
