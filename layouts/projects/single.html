@@ -13,9 +13,9 @@
   {{ $image := $.Resources.GetMatch . }}
   <div class="project-header-image">
     {{ if $image }}
-      <img src="{{ $image.RelPermalink }}" alt="{{ $.Title }} header image">
+      <img src="{{ $image.RelPermalink }}" alt="{{ $.Title }} Log Header Image" title="{{ $.Title }} Log Header Image">
     {{ else }}
-      <img src="{{ . | relURL }}" alt="{{ $.Title }} header image">
+      <img src="{{ . | relURL }}" alt="{{ $.Title }} Log Header Image" title="{{ $.Title }} Log Header Image">
     {{ end }}
   </div>
   {{ end }}
