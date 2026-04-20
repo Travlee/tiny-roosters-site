@@ -43,3 +43,7 @@ body footer{
 .copyright-name{
     color: var(--primary-color);
 }
+
+.copyright-symbol {
+    color: var(--font-less-contrast);
+}
