@@ -112,9 +112,18 @@ body main a:hover {
 }
 
 .hero {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
+    padding: 1rem 1.5rem;
     border-left: 4px solid var(--primary-color);
-    padding-left: 1.5rem;
+    background-color: var(--font-less-contrast-2);
+}
+
+.hero h2 {
+    font-family: "RedHatDisplay-Regular";
+    font-size: var(--h4);
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
 }
 
 .site-hint {
@@ -126,13 +135,6 @@ body main a:hover {
 .site-hint code {
     color: inherit;
     /* background-color: transparent; */
-}
-
-.hero h2 {
-    font-family: "RedHatDisplay-Regular";
-    font-size: var(--h3);
-    line-height: 1.6;
-    margin: 0;
 }
 
 section {
