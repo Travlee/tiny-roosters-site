@@ -2,13 +2,13 @@
   <img src="static/images/character_logo_primary.svg" alt="TR Character Logo" width="128" height="128" />
 </p>
 
-<a href="https://tinyroosters.com" target="_blank" rel="noopener noreferrer"><h1 align="center">TinyRoosters.com</h1></a>
+<h1 align="center">TinyRoosters.com</h1>
 
 <p align="center">
   <b>Tiny Roosters Game Studio - Site</b>
 </p>
 
-**Tiny Roosters** is my attempt at independent game development. Built with [Hugo](https://gohugo.io/) as I really did not want nor need a backend, and because I wanted to finish this fast so I can focus on what I actually like doing - which is not webdesign. Also, Hugo is super neat.
+<a href="https://tinyroosters.com" target="_blank" rel="noopener noreferrer">**Tiny Roosters**</a> is my attempt at independent game development. Built with [Hugo](https://gohugo.io/) as I really did not want nor need a backend, and because I wanted to finish this fast so I can focus on what I actually like doing - which is not webdesign. Also, Hugo is super neat.
 
 ## Tech Stack
 
