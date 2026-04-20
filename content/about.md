@@ -9,7 +9,7 @@ Tiny Roosters is an attempt at independent game development by Travis Presnell. 
 
 ## Tools
 *   **Game Engine** :: [Godot](https://godotengine.org/) (GDScript & C++)
-*   **Editor** :: [VSCode](https://code.visualstudio.com/)
+*   **Editor** :: [VSCode](https://code.visualstudio.com/) + Vim
 *   **Source Control** :: [Git](https://git-scm.com/) / [GitHub](https://github.com/)
 *   **Environment** :: [Windows Terminal](https://github.com/microsoft/terminal) + [WSL2](https://learn.microsoft.com/en-us/windows/wsl/about)
 
