@@ -1,15 +1,15 @@
 +++
 date = "{{ .Date }}"
 title = "{{ replace .Name "-" " " | title }}"
-draft = true
 type = "projects"
 description = ""
+draft = true
 
 [params]
     header_image = ""
 +++
 
-## Project Overview
+## Description
 
 Add project details here.
 Drop images in this folder and reference them via standard Markdown.
