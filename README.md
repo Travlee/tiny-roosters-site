@@ -10,13 +10,14 @@
 
 <a href="https://tinyroosters.com" target="_blank" rel="noopener noreferrer">**Tiny Roosters**</a> is my attempt at independent game development. Built with [Hugo](https://gohugo.io/) as I really did not want nor need a backend, and because I wanted to finish this fast so I can focus on what I actually like doing - which is not webdesign. Also, Hugo is super neat.
 
+> Here is a helpful shell alias I used during development `hugo server -D --disableFastRender --ignoreCache  --gc`
+
 ## Tech Stack
 
 - **[Hugo](https://gohugo.io/)**
 - **HTML5 & Vanilla CSS**
 - **Vanilla JavaScript**
 - **[Umami](https://umami.is/)** analytics
-- Helpful shell alias for `hugo server -D --disableFastRender --ignoreCache  --gc` while developing
 
 ## Infrastructure Design
 
