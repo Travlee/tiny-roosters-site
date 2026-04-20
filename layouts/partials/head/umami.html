@@ -1,5 +1,5 @@
 {{- with site.Params.analytics.umami -}}
   {{- if and .enabled .website_id (not hugo.IsServer) -}}
-    <script defer src="{{ .url | default "https://cloud.umami.is/script.js" }}" data-website-id="{{ .website_id }}"></script>
+    <script defer src="/script.js" data-website-id="{{ .website_id }}"></script>
   {{- end -}}
 {{- end -}}
