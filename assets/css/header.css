@@ -44,17 +44,14 @@ body header nav a{
     font-family: "RedHatDisplay-Black";
     padding: 10px;
 }
-body header nav a:hover {
-    color: var(--font-color);
-    /* text-decoration: underline; */
-}
-
-main header h1{
-    color: gold;
+body header nav a:hover,
+.active-page {
+    color: var(--secondary-color) !important;
+    background-color: var(--primary-color);
 }
 
 .active-page {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 768px) {

@@ -4,7 +4,10 @@
 {{ with site.Menus.main }}
   <nav>
     {{ range . }}
-      {{ if or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .) }}
+      {{ $isCurrent := $page.IsMenuCurrent .Menu . }}
+      {{ $isAncestor := $page.HasMenuCurrent .Menu . }}
+      {{ $isSection := and (ne .URL "/") (eq $page.Section (strings.Trim .URL "/")) }}
+      {{ if or $isCurrent $isAncestor $isSection }}
         <a class="active-page" aria-current="page" href="{{ .URL }}">{{ .Name }}</a>
       {{ else }}
         <a href="{{ .URL }}">{{ .Name }}</a>
