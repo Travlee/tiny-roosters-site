@@ -16,6 +16,7 @@
 - **HTML5 & Vanilla CSS**
 - **Vanilla JavaScript**
 - **[Umami](https://umami.is/)** analytics
+- Helpful shell alias for `hugo server -D --disableFastRender --ignoreCache  --gc` while developing
 
 ## Infrastructure Design
 
