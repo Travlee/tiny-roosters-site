@@ -1,6 +1,7 @@
 baseURL = 'https://tinyroosters.com'
 languageCode = 'en-us'
 title = 'Tiny Roosters'
+enableGitInfo = true
 
 [params.analytics.umami]
   enabled = true
