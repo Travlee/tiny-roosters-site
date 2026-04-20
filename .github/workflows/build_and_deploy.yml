@@ -21,12 +21,12 @@ jobs:
     - name: Build Hugo site
       run: hugo --minify
 
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v2
+    - name: Configure AWS
+      uses: aws-actions/configure-aws-credentials@v6.1.0
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-        aws-secret-access-key: ${{ secrets.AWS_ACCESS_SECRET_KEY }}
         aws-region: ${{ vars.AWS_REGION }}
+        role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+        role-session-name: GHActionBuildTRSite
 
     - name: Sync files to S3
       run: |
