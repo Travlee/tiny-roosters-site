@@ -199,6 +199,7 @@ main {
 main img {
     max-width: 100%;
     height: auto;
+    border: 1px solid var(--font-less-contrast-2);
 }
 main p{
     margin: 0;

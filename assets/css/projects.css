@@ -4,6 +4,7 @@
 
 .project-header-image img{
     width: 100%;
+    border: 1px solid var(--font-less-contrast-2);
 }
 
 .project-single-time{
