@@ -24,7 +24,7 @@
 
   <div class="time-container">
     <span class="project-single-time"><time datetime="{{ $date_machine }}">ADDED ON {{ $date_human }}</time></span>
-    {{ if ne $last_mod $date_human}}
+    {{ if gt $last_mod $date_human}}
       <span class="time-separator">|</span>
       <span class="project-single-time"><time datetime="{{ $last_mod_machine }}">UPDATED ON {{ $last_mod }}</time></span>
     {{ end }}
