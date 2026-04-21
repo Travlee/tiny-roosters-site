@@ -7,11 +7,10 @@
 }
 
 .log-single-time{
-    display: block;
-    margin-top: 10px;
+    display: inline-block;
     font-size: var(--12px);
     font-style: italic;
-    color: var(--font-less-contrast);
+    color: var(--primary-color);
 }
 
 .terms-container {

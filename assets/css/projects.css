@@ -8,11 +8,10 @@
 }
 
 .project-single-time{
-    display: block;
-    margin-top: var(--10px);
+    display: inline-block;
     font-size: var(--12px);
     font-style: italic;
-    color: var(--font-less-contrast);
+    color: var(--primary-color);
 }
 
 .project-long-desc{

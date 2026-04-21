@@ -261,6 +261,17 @@ main h1, main h2, main h3, main h4 {
     animation: none;
 }
 
+.time-container {
+    display: block;
+    margin-top: 10px;
+}
+
+.time-separator {
+    color: var(--font-less-contrast);
+    margin: 0 5px;
+    font-size: var(--12px);
+}
+
 .row-container {
     display: flex;
     flex-direction: column;
