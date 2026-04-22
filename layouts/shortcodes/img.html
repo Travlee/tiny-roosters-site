@@ -1,0 +1,12 @@
+{{/* 
+Usage Examples:
+Named: {{< img src="/images/example.png" alt="Description" title="Hover Title" >}}
+Positional: {{< img "/images/example.png" "Description" "Hover Title" >}}
+*/}}
+{{- $src := .Get "src" | default (.Get 0) -}}
+{{- $alt := .Get "alt" | default (.Get 1) -}}
+{{- $title := .Get "title" | default (.Get 2) -}}
+{{- $image := .Page.Resources.GetMatch $src -}}
+<img src="{{ with $image }}{{ .RelPermalink }}{{ else }}{{ $src | relURL }}{{ end }}" 
+     {{ with $alt }}alt="{{ . }}"{{ else }}alt=""{{ end }} 
+     {{ with $title }}title="{{ . }}"{{ end }}>
