@@ -160,6 +160,9 @@ main h4 {
 body article {
     margin-top: 2rem;
 }
+article img {
+    margin-top: 1rem;
+}
 article ul, article ol {
     list-style: none;
     padding-left: 0;
