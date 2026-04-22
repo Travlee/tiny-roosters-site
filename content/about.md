@@ -18,7 +18,7 @@ Feel feel to reach out via the links below!
 
 * **Email** :: [lee@tinyroosters.com](mailto:lee@tinyroosters.com)
 * **Issues** :: [issues@tinyroosters.com](mailto:issues@tinyroosters.com)
-* **Social** :: [tinyroosters@bsky](https://bsky.app/profile/tinyroosters.bsky.social)
+* **Social** :: [bsky@tinyroosters.com](https://bsky.app/profile/tinyroosters.com)
 * **Github** :: [github/Travlee](https://github.com/Travlee)
 
 {{< hint >}}
