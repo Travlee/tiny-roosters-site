@@ -160,20 +160,31 @@ main h4 {
 body article {
     margin-top: 2rem;
 }
-article ul {
+article ul, article ol {
     list-style: none;
     padding-left: 0;
+}
+article ol {
+    counter-reset: li;
 }
 article li {
     margin-bottom: 0.5rem;
     position: relative;
     padding-left: 1.5rem;
 }
-article li::before {
+article ul > li::before {
     content: "→";
     position: absolute;
     left: 0;
     color: var(--primary-color);
+}
+article ol > li::before {
+    counter-increment: li;
+    content: counter(li) ".";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
 }
 main small{
     font-style: italic;
