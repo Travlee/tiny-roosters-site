@@ -1,0 +1,26 @@
+{{/* 
+Usage Examples:
+Named: {{< a href="https://google.com" title="Google" alt="Search Engine" newtab=false >}}Google{{< /a >}}
+Positional: {{< a "https://google.com" "Google" "Search Engine" false >}}Google{{< /a >}}
+Default (new tab): {{< a "https://google.com" >}}Google{{< /a >}}
+*/}}
+{{- $href := .Get "href" | default (.Get 0) -}}
+{{- $title := .Get "title" | default (.Get 1) -}}
+{{- $alt := .Get "alt" | default (.Get 2) -}}
+{{- $nt_param := .Get "newtab" -}}
+{{- if and (not .IsNamedParams) (ge (len .Params) 4) }}{{ $nt_param = .Get 3 }}{{ end -}}
+
+{{- $newtab := true -}}
+{{/* If the parameter was explicitly provided, check if it was set to false or "false" */}}
+{{- if ne $nt_param nil -}}
+    {{- if or (eq $nt_param false) (eq $nt_param "false") -}}
+        {{- $newtab = false -}}
+    {{- end -}}
+{{- end -}}
+
+<a href="{{ $href | relURL }}"
+    {{ if $newtab }}target="_blank" rel="noopener"{{ end }}
+    {{ with $title }}title="{{ . }}"{{ end }}
+    {{ with $alt }}alt="{{ . }}"{{ end }}>
+    {{- .Inner | markdownify -}}
+</a>
