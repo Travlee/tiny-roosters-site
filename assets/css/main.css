@@ -481,6 +481,8 @@ pre {
     border-radius: 4px;
     margin: 2rem 0;
     border: 2px solid var(--secondary-color);
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 pre code {
