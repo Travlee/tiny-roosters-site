@@ -5,7 +5,7 @@ enableGitInfo = true
 
 [params]
   description = "Independent game development, programming projects, and experiments by Travis Presnell."
-  images = ["images/character_logo_preview.jpg"]
+  images = ["images/character_logo_preview.png"]
 
 [params.analytics.umami]
   enabled = true
