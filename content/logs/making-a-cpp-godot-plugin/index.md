@@ -1,9 +1,9 @@
 +++
-date = '2026-04-22T09:02:11-04:00'
+date = '2026-04-23T06:30:11-04:00'
 title = 'Making a C++ Godot Plugin'
 type = 'logs'
 tags = ["projects", "tutorial", "programming", "godot"]
-description = "Walkthrough of my process for creating a c++ plugin for Godot."
+description = "Walkthrough of my process for creating a c++ plugin for Godot using godot-cpp bindings via GDExtension."
 draft = false
 +++
 
@@ -16,8 +16,10 @@ It's a recreation of VSCode's Quick Open for MRU (Most Recently Used) files in G
 I want to share the process here should anyone else be interested in creating their own Godot plugins with c++.
 
 # Process
-<!-- ![image](godot_script_switcher_example_1.png) -->
-> I will describe the steps I took to get my environment setup for developing this specific plugin. As I developed this plugin on windows, these steps will reflect that. However, it **should** be trivial to change things for yourself to focus on either linux or mac.
+
+> **WARNING**: This was a first attempt and I'm no C++ and/or Godot expert.
+>
+> Also - I will describe the steps I took to get my environment setup for developing this specific plugin. As I developed this plugin on windows, these steps will reflect that. However, it **should** be trivial to change things for yourself to focus on either linux or mac.
 
 ## Dependencies
 
@@ -28,7 +30,7 @@ I want to share the process here should anyone else be interested in creating th
 ### Installing C++ Compiler & Setup
 I used [Msys2](https://www.msys2.org/) to install mingw64. Once **Msys2** is installed, add the bin dir to your **sys env** path. For example: `C:\msys2\ucrt64\bin`.
 
-> **NOTE**: Because windows, I had to signout and sign back in to get the sys env changes to take affect.
+> **NOTE**: Because windows, I had to signout and sign back in to get the sys env changes to take effect.
 
 Once **Msys2** is installed, you can launch the `MSYS2 UCRT46` shell and then install mingw via the pacman package manager.
 For example:
@@ -52,7 +54,7 @@ Searched for CMake Tools via VSCode's extension manager and then installed it.
 This was a large part of the project, made more complicated due to the fact that I wanted to create a workflow in GitHub Actions to build and publish releases - so I need this rock-solid.
 
 \
-[Here](https://github.com/Travlee/godot-script-switcher/blob/main/CMakeLists.txt) is what I ended up with and it *works perfectly on my machine* (also multiple gh runners). This is not intended to be a full CMake breakdown, but I will explain a few parts that required some discovery.
+{{<a href="https://github.com/Travlee/godot-script-switcher/blob/main/CMakeLists.txt" title="Cmakelist.txt link" alt="CMakelist.txt link" >}}Here{{< /a >}} is what I ended up with and it *works perfectly on my machine* (also multiple gh runners). This is not intended to be a full CMake breakdown, but I will explain a few parts that required some discovery.
 
 ### CMake Version
 The gh runners have CMake version `3.31.0` installed, so `cmake_minimum_required(VERSION 3.31.0...4.3.0)` is the solution to that. Not necessarily critical but worth noting.
@@ -60,7 +62,7 @@ The gh runners have CMake version `3.31.0` installed, so `cmake_minimum_required
 ### Fetching godot-cpp
 I really like making use of `FetchContent` in CMake, so I did it here for godot-cpp. There was also some reason as to why I fetched it as a release/zip versus cloning, I forget now. I can only do so much.
 
-```CMake
+```cmake
 # i like my external libs in a special dir
 set(EXTERNAL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/external/")
 
@@ -81,7 +83,7 @@ Something important to note about using CMake instead of SCons, godot-cpp would 
 \
 To solve that, I had to set an **env var** to force it to follow our CMake build type.
 
-```CMake
+```cmake
 # Store build-type to suffix for use with godot-cpp and dir names
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
         set(SUFFIX "debug")
@@ -97,7 +99,7 @@ set(GODOTCPP_TARGET "template_${SUFFIX}")
 
 Now all that is left was to link `godot-cpp` to my project.
 
-```CMake
+```cmake
 target_link_libraries(${CMAKE_PROJECT_NAME} godot-cpp)
 ```
 
@@ -106,13 +108,45 @@ target_link_libraries(${CMAKE_PROJECT_NAME} godot-cpp)
 
 I had to select the correct `gcc` for `CMake Tools` in `VSCode`. Which was simply done by pressing `Ctrl + Shift + P` then typing `cmake` then selecting my GCC installed via `Msys2`.
 
-\
-![image](cmake-tools-select-kit.png)
+{{< img src="cmake-tools-select-kit.png" alt="CMake Tools - Select Kit" title="CMake Tools - Select Kit">}}
 
 \
-Now I could build my plugin in `VSCode` by pressing `F7`. Build times were okay on my laptop with 16 cores.
+Now I could build my plugin in `VSCode` by simply pressing `F7`. Build times were okay on my laptop with 16 cores.
 
+> **NOTE**: You can select **variants** with CMake Tools to target debug/release build types.
+
+Now to the actual work of writing the plugin.
 
 ## Code
 
-Now to the actual work of writing the plugin.
+I put all my actual code files into the `src/` dir and build all files in there into my CMake project. We require `register_types.cpp` and `register_types.hpp` files in our project, which *registers* our plugin with **Godot**. You also set the `ModuleInitializationLevel` here, which you'll have to look up; my plugin is registered as `MODULE_INITIALIZATION_LEVEL_EDITOR` since it's targeting the editor.
+
+```cpp
+void initialize_script_switcher_module(ModuleInitializationLevel p_level) {
+	if (p_level != MODULE_INITIALIZATION_LEVEL_EDITOR) {
+		return;
+	}
+
+        // TODO add classes here
+	GDREGISTER_CLASS(ScriptSwitcher);
+}
+
+void uninitialize_script_switcher_module(ModuleInitializationLevel p_level) {
+	if (p_level != MODULE_INITIALIZATION_LEVEL_EDITOR) {
+		return;
+	}
+}
+
+extern "C" {
+
+        GDExtensionBool GDE_EXPORT script_switcher_init(GDExtensionInterfaceGetProcAddress p_get_proc_address, GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization) {
+                godot::GDExtensionBinding::InitObject init_obj(p_get_proc_address, p_library, r_initialization);
+
+                init_obj.register_initializer(initialize_script_switcher_module);
+                init_obj.register_terminator(uninitialize_script_switcher_module);
+                init_obj.set_minimum_library_initialization_level(MODULE_INITIALIZATION_LEVEL_EDITOR);
+
+                return init_obj.init();
+        }
+}
+```
