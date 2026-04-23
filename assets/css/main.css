@@ -436,6 +436,10 @@ main h1, main h2, main h3, main h4 {
     color: var(--primary-color) !important;
 }
 
+.background-color-primary{
+    background-color: var(--primary-color);
+}
+
 .color-secondary{
     color: var(--secondary-color) !important;
 }
