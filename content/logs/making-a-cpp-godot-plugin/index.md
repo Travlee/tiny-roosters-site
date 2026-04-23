@@ -54,7 +54,7 @@ Searched for CMake Tools via VSCode's extension manager and then installed it.
 This was a large part of the project, made more complicated due to the fact that I wanted to create a workflow in GitHub Actions to build and publish releases - so I need this rock-solid.
 
 \
-{{<a href="https://github.com/Travlee/godot-script-switcher/blob/main/CMakeLists.txt" title="Cmakelist.txt link" alt="CMakelist.txt link" >}}Here{{< /a >}} is what I ended up with and it *works perfectly on my machine* (also multiple gh runners). This is not intended to be a full CMake breakdown, but I will explain a few parts that required some discovery.
+My {{<a href="https://github.com/Travlee/godot-script-switcher/blob/main/CMakeLists.txt" title="CMakelists.txt" alt="GodotScriptSwitcher CMakelists.txt" >}}CMakelists.txt{{< /a >}} file is what I ended up with and it *works perfectly on my machine* (also multiple gh runners). This is not intended to be a full CMake breakdown, but I will explain a few parts that required some discovery.
 
 ### CMake Version
 The gh runners have CMake version `3.31.0` installed, so `cmake_minimum_required(VERSION 3.31.0...4.3.0)` is the solution to that. Not necessarily critical but worth noting.
@@ -119,8 +119,12 @@ Now to the actual work of writing the plugin.
 
 ## Code
 
+> Inside the godot-cpp files, there is a demo project you can use as a starting point. `./godot-cpp/test/src`
+
 I put all my actual code files into the `src/` dir and build all files in there into my CMake project. We require `register_types.cpp` and `register_types.hpp` files in our project, which *registers* our plugin with **Godot**. You also set the `ModuleInitializationLevel` here, which you'll have to look up; my plugin is registered as `MODULE_INITIALIZATION_LEVEL_EDITOR` since it's targeting the editor.
 
+\
+File available here: {{< a href="https://github.com/Travlee/godot-script-switcher/blob/main/src/register_types.cpp" title="GodotScriptSwitcher Plugin register_types.cpp" alt="Link to GodotScriptSwitcher Plugin register_types.cpp">}}register_types.cpp.{{< /a >}}
 ```cpp
 void initialize_script_switcher_module(ModuleInitializationLevel p_level) {
 	if (p_level != MODULE_INITIALIZATION_LEVEL_EDITOR) {
@@ -150,3 +154,86 @@ extern "C" {
         }
 }
 ```
+
+Also important here is the `GDREGISTER_CLASS` macro. This is where we let Godot know about our Class and is definitely required.
+
+\
+Now, inside the actual plugin class, you also have to tell Godot about some of your methods: if they need to be accessible inside Godot or if you're overriding built-ins. My plugin connected to 2 signals so I had two methods to bind:
+
+```cpp
+void ScriptSwitcher::_bind_methods()
+{
+        ClassDB::bind_method(D_METHOD("_on_script_changed", "script"), &ScriptSwitcher::_on_script_changed);
+        ClassDB::bind_method(D_METHOD("_on_popup_visibility_changed"), &ScriptSwitcher::_on_popup_visibility_changed);
+}
+```
+
+## Plugin Files
+
+Godot likes its plugins in the dir `<godot_project>/addons/<plugin name>/`. That's where our `.dll`/`.so`/`.dylib` will go. Additionally, you need 3 more files: `plugin.cfg`, `<plugin name>.gdextension` and `<plugin name>.gd`.
+
+### Plugin.cfg
+
+This simply defines some metadata about our plugin to Godot that'll show up in the plugin list when someone enables it.
+
+```cfg
+[plugin]
+
+name="GodotScriptSwitcher"
+description="Quick switching of open scripts in the ScriptEditor with Ctrl + Tab."
+author="Travis Lee Presnell"
+version="1.0"
+script="godot_script_switcher.gd"
+```
+
+### GDExtension File
+
+This file was more frightening; I had to turn the lights on.
+
+```
+[configuration]
+entry_symbol = "script_switcher_init"
+compatibility_minimum = "4.6"
+reloadable = true
+
+[libraries]
+windows.debug.x86_64 = "res://addons/godot_script_switcher/godot_script_switcher.dll"
+windows.release.x86_64 = "res://addons/godot_script_switcher/godot_script_switcher.dll"
+linux.debug.x86_64 = "res://addons/godot_script_switcher/godot_script_switcher.so"
+linux.release.x86_64 = "res://addons/godot_script_switcher/godot_script_switcher.so"
+macos.debug = "res://addons/godot_script_switcher/godot_script_switcher.dylib"
+macos.release = "res://addons/godot_script_switcher/godot_script_switcher.dylib"
+```
+
+The lights calmed me down and I discovered that all we're doing is pointing to Godot our plugin init function and pointing to our built plugin files.
+
+#### Entry point
+
+For the `entry_symbol = "script_switcher_init"` we defined this in the `C` section of our `register_types.cpp` file. Specifically this line `GDExtensionBool GDE_EXPORT script_switcher_init(...) {...}`.
+
+#### Version & reloadable
+
+The version of godot-cpp I used was 4.5, but I targeted Godot 4.6 for my plugin without issue. {{< tooltip "Your Mileage May Vary. Common idiom.">}}YMMV{{< /tooltip >}}
+
+\
+So I set `compatibility_minimum = "4.6"`.
+
+\
+For `reloadable = true` just means Godot will detect for changes to the file and then *reload* it. **Word of caution**: If you're like me and try to free Godot managed memory via your plugin - It will crash. I spent most of my dev time with a crashing editor due to trying to free up my `ScriptEditor` reference on `_exit_tree`. The take away: **do not free up singletons you get from Godot**. Godot manages its own memory, it does not want you interfering.
+
+### Plugin GDScript File
+
+I don't know if every plugin needs this, but it seemed required for mine as the plugin was not able to be enabled without it.
+
+```gd
+@tool
+extends ScriptSwitcher
+```
+
+
+# Final Thoughts
+
+I found it **very** tedious to keep manually launching/reloading my Godot editor. Late in the game I discovered some ancient strategies to solve this problem: `C:\...>Godot_v4.6-stable_win64_console.exe -e --path "C:\...\godot-script-switcher\godot"`.
+
+\
+Godot can be **commanded** by the cmdline, even opening a specific project. Give it a shot.
