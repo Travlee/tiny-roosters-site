@@ -2,7 +2,7 @@
 title = 'About'
 draft = false
 type = 'about'
-# description = ""
+description = "Learn more about Tiny Roosters here."
 +++
 
 Tiny Roosters is an attempt at independent game development by Travis Presnell. There are no singular genres or themes just a passion for game development, so expect continuous experiments to take place here.

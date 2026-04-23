@@ -3,6 +3,10 @@ languageCode = 'en-us'
 title = 'Tiny Roosters'
 enableGitInfo = true
 
+[params]
+  description = "Independent game development, programming projects, and experiments by Travis Presnell."
+  images = ["images/character_logo_preview.jpg"]
+
 [params.analytics.umami]
   enabled = true
   url = "https://cloud.umami.is/script.js"
