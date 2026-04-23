@@ -1,9 +1,9 @@
 +++
-date = '2026-04-23T06:30:11-04:00'
+date = '2026-04-23T10:10:00-04:00'
 title = 'Making a C++ Godot Plugin'
 type = 'logs'
 tags = ["projects", "tutorial", "programming", "godot"]
-description = "Walkthrough of my process for creating a c++ plugin for Godot using godot-cpp bindings via GDExtension."
+description = "Walkthrough of my process for creating a C++ plugin for Godot using godot-cpp bindings via GDExtension."
 draft = false
 +++
 
@@ -14,6 +14,27 @@ It's a recreation of VSCode's Quick Open for MRU (Most Recently Used) files in G
 
 \
 I want to share the process here should anyone else be interested in creating their own Godot plugins with c++.
+
+# Content <!-- omit from toc -->
+- [Process](#process)
+  - [Dependencies](#dependencies)
+    - [Installing C++ Compiler \& Setup](#installing-c-compiler--setup)
+    - [Installing CMake \& Setup](#installing-cmake--setup)
+    - [Install CMake Tools for VSCode](#install-cmake-tools-for-vscode)
+  - [CMake File](#cmake-file)
+    - [CMake Version](#cmake-version)
+    - [Fetching godot-cpp](#fetching-godot-cpp)
+    - [Configuring godot-cpp](#configuring-godot-cpp)
+    - [Linking godot-cpp](#linking-godot-cpp)
+  - [VSCode Setup](#vscode-setup)
+  - [Code](#code)
+  - [Plugin Files](#plugin-files)
+    - [Plugin.cfg](#plugincfg)
+    - [GDExtension File](#gdextension-file)
+      - [Entry point](#entry-point)
+      - [Version \& reloadable](#version--reloadable)
+    - [Plugin GDScript File](#plugin-gdscript-file)
+- [Final Thoughts](#final-thoughts)
 
 # Process
 
@@ -106,7 +127,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME} godot-cpp)
 
 ## VSCode Setup
 
-I had to select the correct `gcc` for `CMake Tools` in `VSCode`. Which was simply done by pressing `Ctrl + Shift + P` then typing `cmake` then selecting my GCC installed via `Msys2`.
+I had to select the correct `gcc` for `CMake Tools` in `VSCode`. Which was easily done by pressing `Ctrl + Shift + P` then typing `cmake` then selecting `Cmake: Select a Kit` then finally selecting my GCC installed via `Msys2`.
 
 {{< img src="cmake-tools-select-kit.png" alt="CMake Tools - Select Kit" title="CMake Tools - Select Kit">}}
 
@@ -115,7 +136,6 @@ Now I could build my plugin in `VSCode` by simply pressing `F7`. Build times wer
 
 > **NOTE**: You can select **variants** with CMake Tools to target debug/release build types.
 
-Now to the actual work of writing the plugin.
 
 ## Code
 
@@ -233,7 +253,9 @@ extends ScriptSwitcher
 
 # Final Thoughts
 
-I found it **very** tedious to keep manually launching/reloading my Godot editor. Late in the game I discovered some ancient strategies to solve this problem: `C:\...>Godot_v4.6-stable_win64_console.exe -e --path "C:\...\godot-script-switcher\godot"`.
+I found it **very** tedious to keep manually launching/reloading my Godot editor. Late in the game I discovered an ancient strategy to solve this problem: `C:\...>Godot_v4.6-stable_win64_console.exe -e --path "C:\...\godot-script-switcher\godot"`.
+
+Godot can be **commanded** by the cmdline, even opening a specific project. Give it a shot.
 
 \
-Godot can be **commanded** by the cmdline, even opening a specific project. Give it a shot.
+It was overall much easier than I expected to make a plugin in Godot, expecially in C++. I'm very happy with my plugin even though there are a few things I still want/need to add to it. I also have plans to make another and I'll be using this project as a template. Thanks {{<a href="https://godotengine.org/" alt="Godot Game Engine" title="Godot Game Engine - Homepage">}}Godot.{{</a>}}
