@@ -521,21 +521,46 @@ pre code {
         margin-bottom: 16px;
         padding-bottom: 8px;
         border-bottom: 1px solid var(--font-less-contrast-2);
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        align-items: center;
+        gap: 0 8px;
+    }
+
+    .row-arrow {
+        grid-column: 1;
+        grid-row: 1 / 10;
+        justify-self: center;
+        margin-right: 0;
+    }
+
+    .row-time {
+        grid-column: 2;
+        order: 1;
+        margin-right: 0;
+        margin-top: 2px;
     }
 
     .row-title-link {
+        grid-column: 2;
+        order: 2;
         white-space: normal;
         text-overflow: clip;
     }
 
     .row-desc {
-        order: 5;
+        grid-column: 2;
+        order: 3;
+        margin-top: 4px;
+        padding-left: 0;
+        flex: none;
     }
 
     .row-tags {
-        flex: 1 1 100% !important;
-        margin-left: 24px !important;
+        grid-column: 2;
+        order: 4;
+        margin-left: 0 !important;
         margin-top: 8px !important;
-        order: 10;
+        flex: none !important;
     }
 }
