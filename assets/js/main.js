@@ -58,7 +58,7 @@ let help_active = false;
 let hints_active = false;
 let hint_elements = [];
 let hint_buffer = '';
-const hint_chars = "sdcgjkqwertyuiozxvbnm";
+const hint_chars = "sdcgjkqwertuiozxvbnm";
 
 function show_hints() {
     if (hints_active) return;
@@ -109,6 +109,7 @@ function show_help() {
             <h2>Keybinds</h2>
             <div class="help-grid">
                 <span class="help-key">h</span><span class="help-desc">Home</span>
+                <span class="help-key">y</span><span class="help-desc">History</span>
                 <span class="help-key">a</span><span class="help-desc">About</span>
                 <span class="help-key">l</span><span class="help-desc">Logs</span>
                 <span class="help-key">p</span><span class="help-desc">Projects</span>
@@ -186,6 +187,8 @@ function handle_keydown(event) {
 
     if(lower_key === 'h'){
         window.location.href = "/";
+    } else if(lower_key === 'y'){
+        window.location.href = "/history";
     } else if(lower_key === 'r'){
         window.location.reload();
     } else if(lower_key === 'a'){
@@ -277,4 +280,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // # Console log keybind tips
-console.log("helpful keybinds: [h = home, a = about, c/G = scroll to footer, gg = scroll to top, l = logs, p = projects, i = invert, j = scroll down, k = scroll up, r = reload, ? = help]");
+console.log("helpful keybinds: [h = home, y = history, a = about, c/G = scroll to footer, gg = scroll to top, l = logs, p = projects, i = invert, j = scroll down, k = scroll up, r = reload, ? = help]");
