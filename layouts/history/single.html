@@ -1,0 +1,33 @@
+{{ define "main" }}
+  <h1>
+    <span class="title-prefix"><a href="/"><</a></span> {{ .Title }}
+  </h1>
+
+  {{ with .Params.description }}
+  <div class="hero">
+    <h2>{{ . }}</h2>
+  </div>
+  {{ end }}
+
+  <article>
+
+    <div class="row-container">
+
+    {{ range (where site.RegularPages "RelPermalink" "ne" .RelPermalink).ByLastmod.Reverse }}
+      {{ $date_machine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $date_human := .Lastmod.Format "2006-01-02" }}
+
+      <div class="row">
+        <span class="row-arrow">↻</span>
+        <span class="row-time"><time datetime="{{ $date_machine }}">{{ $date_human }}</time></span>
+        <a href="{{ .RelPermalink }}" class="row-title-link color-primary" title="{{ .Description | default .Summary }}">
+            {{ if eq .Type "logs" }}<span class="color-less-contrast">[LOG]</span> {{ else if eq .Type "projects" }}<span class="color-less-contrast">[PRJ]</span> {{ end }}
+            {{ .LinkTitle }}
+        </a>
+        <div class="row-desc">
+            {{ .Description | default .Summary }}
+        </div>
+      </div>
+    {{ end }}
+  </article>
+{{ end }}

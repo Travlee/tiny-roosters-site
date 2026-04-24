@@ -43,7 +43,12 @@ enableGitInfo = true
     url = '/logs'
     weight = 20
   [[menus.main]]
+    name = 'History'
+    pageRef = '/history'
+    url = '/history'
+    weight = 30
+  [[menus.main]]
     name = 'About'
     pageRef = '/about'
     url = '/about'
-    weight = 30
+    weight = 40
