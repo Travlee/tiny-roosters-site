@@ -24,6 +24,12 @@ This is a plugin for the [Godot Game Engine](https://godotengine.org/) created w
 *   **Symbol Cursor Go-To**: Places the caret at the exact line and column of the selected symbol.
 *   **High Performance**: Built with C++ (GDExtension) for near-instant indexing and filtering, even in massive script files.
 
+## Screenshots
+
+{{< img src="popup_example_large_list.png" alt="Godot Symbol Search - Large List" title="The search popup displaying a large list of symbols." >}}
+
+{{< img src="popup_example_large_list_fuzzy_search.png" alt="Godot Symbol Search - Fuzzy Search" title="Fuzzy search matching in a large script file." >}}
+
 ## Usage
 
 Once the plugin is enabled, you can use the following keyboard shortcuts:
