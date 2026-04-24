@@ -46,6 +46,7 @@ This plugin is implemented in C++, using Godot's **GDExtension** with [godot-cpp
 The **ScriptSwitcher** class tracks script changes by binding to the `ScriptEditor::editor_script_changed` signal, updating a MRU history variable stored as a **vector** type. It overrides the global `_inputs` method to listen for `Ctrl + Tab` combinations and only displays the quick-open popup if the script editor is active. The popup UI is designed in Godot and saved to a `.tscn` file and dynamically loaded in when the plugin is enabled.
 
 ## Links
-* [Github](https://github.com/Travlee/godot-script-switcher)
-* [Asset Store](https://godotengine.org/asset-library/asset/5035)
-* [Issues](https://github.com/Travlee/godot-script-switcher/issues)
+* {{<a href="https://github.com/Travlee/godot-script-switcher" title="Github Repo" alt="GitHub Repo link">}}Github Repo{{</a>}}
+* {{<a href="https://github.com/Travlee/godot-script-switcher#installation" title="Install Help" alt="GitHub Repo link to install section">}}Install Help{{</a>}}
+* {{<a href="https://godotengine.org/asset-library/asset/5035" title="Asset Library" alt="Link to Godot Asset Library">}}Godot Asset Library{{</a>}}
+* {{<a href="https://github.com/Travlee/godot-script-switcher/issues" title="Report Issues" alt="Link to Github Repo Issues">}}Report Issues{{</a>}}
