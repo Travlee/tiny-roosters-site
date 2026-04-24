@@ -4,6 +4,7 @@ title = "Godot Symbol Search Plugin"
 type = "projects"
 description = "Plugin for the Godot Game Engine to implement VSCode's 'Go To Symbol' utility created in C++ with godot-cpp."
 draft = false
+project_tags = ["tool"]
 
 [params]
     header_image = "popup_example_1png.png"

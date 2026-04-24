@@ -4,6 +4,7 @@ type = 'projects'
 title = 'Godot Script Switcher Plugin'
 description = "Plugin for the Godot Game Engine to implement VSCode's Quick Open for MRU files created with godot-cpp."
 draft = false
+project_tags = ["tool"]
 
 [params]
     header_image = 'godot_script_switcher_example_1.png'

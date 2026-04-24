@@ -1,6 +1,12 @@
 {{ define "main" }}
   <h1>
-    <span class="title-prefix"><a href="{{ "logs" | relURL }}"><</a></span> {{ .Title }}
+    <span class="title-prefix">
+      {{- $back_url := "logs" | relURL -}}
+      {{- if eq .Data.Plural "project_tags" -}}
+        {{- $back_url = "projects" | relURL -}}
+      {{- end -}}
+      <a href="{{ $back_url }}"><</a>
+    </span> {{ .Title }}
   </h1>
 
   <div class="row-container terms-page-container">

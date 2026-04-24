@@ -1,6 +1,6 @@
 {{ define "main" }}
   <h1>
-    <span class="title-prefix"><a href="{{ "tags" | relURL }}"><</a></span> <span class="color-less-contrast">#</span>{{ .Title }}
+    <span class="title-prefix"><a href="{{ .Data.Plural | relURL }}"><</a></span> <span class="color-less-contrast">#</span>{{ .Title }}
   </h1>
 
   <div class="taxonomy-header">
@@ -13,7 +13,11 @@
       {{ $date_human := .Date.Format "2006-01-02" }}
 
       <div class="row">
-        <span class="row-arrow">🖉</span>
+        {{- $arrow := "🖉" -}}
+        {{- if eq $.Data.Plural "project_tags" -}}
+          {{- $arrow = "🖮" -}}
+        {{- end -}}
+        <span class="row-arrow">{{ $arrow }}</span>
         <span class="row-time"><time datetime="{{ $date_machine }}">{{ $date_human }}</time></span>
         <a href="{{ .RelPermalink }}" class="row-title-link color-primary" title="{{ .Description }}">{{ .LinkTitle }}</a>
         <div class="row-desc">{{ .Description }}</div>

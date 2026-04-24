@@ -1,11 +1,18 @@
 {{- $page := .page }}
 {{- $taxonomy := .taxonomy }}
+{{- $nolink := .nolink }}
 
 {{- with $page.GetTerms $taxonomy }}
   <div class="terms-container">
     <ul class="terms-list">
       {{- range . }}
-        <li class="term-item"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+        <li class="term-item">
+          {{- if $nolink -}}
+            <span class="term-item-no-link">{{ .LinkTitle }}</span>
+          {{- else -}}
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+          {{- end -}}
+        </li>
       {{- end }}
     </ul>
   </div>

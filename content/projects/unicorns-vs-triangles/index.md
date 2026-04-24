@@ -4,6 +4,7 @@ title = 'Unicorns vs Triangles'
 type = 'projects'
 description = '2D tower defense, auto chess, with tactics.'
 draft = true
+project_tags = ["game"]
 
 [params]
     header_image = 'unicorns-vs-triangles-menu.png'

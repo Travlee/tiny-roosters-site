@@ -4,6 +4,7 @@ title = "Tiny Roosters Site"
 type = "projects"
 description = "Website for Tiny Roosters. The site you are currently on. No longer missing."
 draft = false
+project_tags = ["webapp"]
 
 [params]
     header_image = "tinyroosters-site-404.png"

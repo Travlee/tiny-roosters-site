@@ -32,9 +32,9 @@
 
   <span class="project-long-desc">{{ .Description }}</span>
 
+  {{ partial "terms.html" (dict "taxonomy" "project_tags" "page" . "nolink" true) }}
+
   <article>
     {{ .Content }}
   </article>
-
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}

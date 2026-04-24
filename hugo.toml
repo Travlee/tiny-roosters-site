@@ -3,6 +3,11 @@ languageCode = 'en-us'
 title = 'Tiny Roosters'
 enableGitInfo = true
 
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  project_tag = "project_tags"
+
 [params]
   description = "Independent game development, programming projects, and experiments by Travis Presnell."
   images = ["images/character_logo_preview.png"]
