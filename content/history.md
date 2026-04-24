@@ -1,8 +1,8 @@
 +++
 title = 'History'
 type = 'history'
-description = "All recent updates to the site listed here."
+description = "A list of all file history is shown here just for fun."
 draft = false
 +++
 
-All recent updates to the site, including logs and projects.
+A list of all file history is shown here just for fun.
