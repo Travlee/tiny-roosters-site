@@ -27,3 +27,7 @@
     margin-bottom: var(--20px);
     color: var(--font-color);
 }
+
+.projects-container{
+    margin-top: 1rem;
+}

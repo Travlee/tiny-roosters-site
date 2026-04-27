@@ -36,6 +36,16 @@ function invert_page(event = null, on_load = false) {
         character_logo.src = alt_src;
     }
 
+    let splash_logo = document.getElementById("splash-logo");
+    if (splash_logo){
+        let src = splash_logo.src;
+        let alt_src = src.replace('primary', "alt");
+        if (alt_src == src){
+            alt_src = src.replace("alt", "primary");
+        }
+        splash_logo.src = alt_src;
+    }
+
     root.style.setProperty('--primary-color', alt_primary_color);
     root.style.setProperty('--secondary-color', alt_secondary_color);
     root.style.setProperty('--font-color', alt_font_color);
@@ -109,7 +119,7 @@ function show_help() {
             <h2>Keybinds</h2>
             <div class="help-grid">
                 <span class="help-key">h</span><span class="help-desc">Home</span>
-                <span class="help-key">y</span><span class="help-desc">History</span>
+                <span class="help-key">y</span><span class="help-desc">Changelog</span>
                 <span class="help-key">a</span><span class="help-desc">About</span>
                 <span class="help-key">l</span><span class="help-desc">Logs</span>
                 <span class="help-key">p</span><span class="help-desc">Projects</span>
@@ -188,7 +198,7 @@ function handle_keydown(event) {
     if(lower_key === 'h'){
         window.location.href = "/";
     } else if(lower_key === 'y'){
-        window.location.href = "/history";
+        window.location.href = "/changelog";
     } else if(lower_key === 'r'){
         window.location.reload();
     } else if(lower_key === 'a'){
@@ -280,4 +290,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // # Console log keybind tips
-console.log("helpful keybinds: [h = home, y = history, a = about, c/G = scroll to footer, gg = scroll to top, l = logs, p = projects, i = invert, j = scroll down, k = scroll up, r = reload, ? = help]");
+console.log("helpful keybinds: [h = home, y = changelog, a = about, c/G = scroll to footer, gg = scroll to top, l = logs, p = projects, i = invert, j = scroll down, k = scroll up, r = reload, ? = help]");

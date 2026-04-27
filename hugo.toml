@@ -9,8 +9,8 @@ enableGitInfo = true
   project_tag = "project_tags"
 
 [params]
-  description = "Independent game development, programming projects, and experiments by Travis Presnell."
-  images = ["images/character_logo_preview.png"]
+  description = "Welcome to Tiny Roosters! Here you'll find games & other programming projects, updates, and maybe more."
+  images = ["images/splash_logo_primary.webp"]
 
 [params.analytics.umami]
   enabled = true
@@ -28,27 +28,22 @@ enableGitInfo = true
 
 [menus]
   [[menus.main]]
-    name = 'Home'
-    pageRef = '/'
-    url = '/'
+    name = 'About'
+    pageRef = '/about'
+    url = '/about'
     weight = 10
   [[menus.main]]
     name = 'Projects'
     pageRef = '/projects'
     url = '/projects'
-    weight = 10
+    weight = 20
   [[menus.main]]
     name = 'Logs'
     pageRef = '/logs'
     url = '/logs'
-    weight = 20
-  [[menus.main]]
-    name = 'About'
-    pageRef = '/about'
-    url = '/about'
     weight = 30
   [[menus.main]]
-    name = 'History'
-    pageRef = '/history'
-    url = '/history'
+    name = 'Changelog'
+    pageRef = '/changelog'
+    url = '/changelog'
     weight = 40

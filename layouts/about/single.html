@@ -1,11 +1,7 @@
 {{ define "main" }}
-  <h1>
-    <span class="title-prefix"><a href="{{ .Parent.RelPermalink }}"><</a></span>
-    {{ .Title }}
-  </h1>
-
   {{ with .Params.description }}
-  <div class="hero">
+  <div class="log-long-desc">
+  <!-- <div class="hero"> -->
     <h2>{{ . }}</h2>
   </div>
   {{ end }}

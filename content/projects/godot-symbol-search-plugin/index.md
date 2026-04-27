@@ -58,4 +58,5 @@ For the deepest dive into the implementation, see {{< a href="https://github.com
 * {{<a href="https://github.com/Travlee/godot-symbol-search" title="Github Repo" alt="GitHub Repo link">}}Github Repo{{</a>}}
 * {{<a href="https://github.com/Travlee/godot-symbol-search#installation" title="Install Help" alt="GitHub Repo link to install section">}}Install Help{{</a>}}
 * {{<a href="https://godotengine.org/asset-library/asset/5083" title="Asset Library" alt="Link to Godot Asset Library">}}Godot Asset Library{{</a>}}
+* {{<a href="https://store.godotengine.org/asset/tinyroosters/godot-symbol-search/" title="Asset Store" alt="Link to Godot Asset Store">}}Godot Asset Store{{</a>}}
 * {{<a href="https://github.com/Travlee/godot-symbol-search/issues" title="Report Issues" alt="Link to Github Repo Issues">}}Report Issues{{</a>}}

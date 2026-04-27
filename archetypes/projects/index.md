@@ -2,10 +2,14 @@
 date = "{{ .Date }}"
 title = "{{ replace .Name "-" " " | title }}"
 type = "projects"
+is_game = false
 description = ""
 draft = true
 
 [params]
+    card_title = ""
+    card_description = ""
+    card_image = ""
     header_image = ""
 +++
 

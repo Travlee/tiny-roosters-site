@@ -1,0 +1,63 @@
+{{ define "main" }}
+  <div class="game-layout">
+    {{ with .Params.header_image }}
+    {{ $image := $.Resources.GetMatch . }}
+    <div class="game-hero">
+      {{ if $image }}
+        <img src="{{ $image.RelPermalink }}" alt="Game: {{ $.Title }}" class="game-hero-image">
+      {{ else }}
+        <img src="{{ . | relURL }}" alt="Game: {{ $.Title }}" class="game-hero-image">
+      {{ end }}
+      <div class="game-hero-overlay">
+        <header class="game-header">
+          <h1>
+              <span class="title-prefix">
+                <a href="{{ $.Parent.RelPermalink }}"><</a>
+              </span>
+              {{ $.Title }}
+          </h1>
+        </header>
+      </div>
+    </div>
+    {{ else }}
+    <header class="game-header no-hero">
+      <h1>
+          <span class="title-prefix">
+            <a href="{{ .Parent.RelPermalink }}"><</a>
+          </span>
+          {{ .Title }}
+      </h1>
+    </header>
+    {{ end }}
+
+    <div class="game-content-wrapper">
+      <div class="time-container">
+        <span class="project-single-time">
+          ANNOUNCED: {{ .Date.Format "2006-01-02" }}
+        </span>
+        <span class="time-separator">|</span>
+        <span class="project-single-time">
+          {{ with .Params.release_date }}
+            RELEASE: {{ . }}
+          {{ else }}
+            RELEASE: ???
+          {{ end }}
+        </span>
+      </div>
+
+      {{ with .Description }}
+      <div class="game-tagline-container">
+        <span class="game-tagline">{{ . }}</span>
+      </div>
+      {{ end }}
+
+      <div class="game-tags-wrapper">
+        {{ partial "terms.html" (dict "taxonomy" "project_tags" "page" . "nolink" true) }}
+      </div>
+
+      <article class="game-article">
+        {{ .Content }}
+      </article>
+    </div>
+  </div>
+{{ end }}

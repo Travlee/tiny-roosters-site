@@ -1,0 +1,98 @@
+.home-main {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
+    width: 100%;
+}
+
+.splash-logo {
+    height: auto;
+    margin-bottom: 2rem;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 0 0 var(--primary-color));
+    /* animation: wiggle 5s infinite; */
+    border: none;
+}
+
+.splash-logo:hover {
+    /* transform: scale(1.1); */
+    /* transform: rotate(5deg); */
+}
+
+.splash-title {
+    font-size: 4rem;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: 'RedHatDisplay-Black';
+    color: var(--primary-color);
+    letter-spacing: -2px;
+}
+
+.splash-nav {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.splash-nav a {
+    font-family: 'RedHatDisplay-Black';
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-decoration: none !important;
+    /* color: var(--font-color); */
+    color: var(--primary-color);
+    /* transition: color 0.2s; */
+    transition: transform 0.2s;
+    padding: var(--10px);
+}
+
+.splash-nav a:hover {
+    color: var(--secondary-color) !important;
+    /* color: var(--primary-color) !important; */
+    background-color: var(--primary-color) !important;
+    /* transform: translateY(-5px); */
+    /* background: none !important; */
+    animation: wiggle 2s ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+    .home-main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .splash-container {
+        flex: 1;
+        min-height: unset;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 2rem;
+    }
+
+    .splash-logo {
+        margin-bottom: 0;
+    }
+
+    .splash-title {
+        font-size: 2.5rem;
+    }
+
+    .splash-nav {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}

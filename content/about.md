@@ -2,14 +2,19 @@
 title = 'About'
 draft = false
 type = 'about'
-description = "Learn more about Tiny Roosters here."
+description = ""
+
+[params]
+    card_title = "Tiny Roosters | About"
+    card_description = "Tiny Roosters is an attempt at independent game development by Travis Presnell. Learn more."
 +++
 
+# What is {{< color "color-primary" >}}_Tiny Roosters_{{< /color >}}?
 Tiny Roosters is an attempt at independent game development by Travis Presnell. There are no singular genres or themes just a passion for game development, so expect continuous experiments to take place here.
 
 ## Tools
 *   **Game Engine** :: [Godot](https://godotengine.org/) (GDScript & C++)
-*   **Editor** :: [VSCode](https://code.visualstudio.com/) + Vim
+*   **Editor** :: [VSCode](https://code.visualstudio.com/) & Vim
 *   **Source Control** :: [Git](https://git-scm.com/) / [GitHub](https://github.com/)
 *   **Environment** :: [Windows Terminal](https://github.com/microsoft/terminal) + [WSL2](https://learn.microsoft.com/en-us/windows/wsl/about)
 

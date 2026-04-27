@@ -7,8 +7,23 @@
 <meta name="description" content="{{ . }}">
 {{ end }}
 
-{{ template "_internal/opengraph.html" . }}
-{{ template "_internal/twitter_cards.html" . }}
+{{- $cardTitle := .Params.card_title | default .Title -}}
+{{- $cardDescription := .Params.card_description | default .Description | default .Summary | default site.Params.description -}}
+{{- $cardImage := .Params.card_image | default (index .Params.images 0) | default (index site.Params.images 0) | absURL -}}
+
+<!-- Open Graph -->
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:title" content="{{ $cardTitle }}">
+<meta property="og:description" content="{{ $cardDescription }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:image" content="{{ $cardImage }}">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $cardTitle }}">
+<meta name="twitter:description" content="{{ $cardDescription }}">
+<meta name="twitter:image" content="{{ $cardImage }}">
 
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}

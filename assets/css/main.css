@@ -23,6 +23,7 @@
 
 :root {
     --primary-color: #FEC426;
+    --primary-color-rgb: 254, 196, 38;
     --alt-primary-color: #060606;
     --secondary-color: #060606;
     --alt-secondary-color: #FEC426;
@@ -355,6 +356,37 @@ main h1, main h2, main h3, main h4 {
     white-space: normal;
 }
 
+.mb-20 {
+    margin-bottom: var(--20px);
+}
+.mt-20 {
+    margin-top: var(--20px);
+}
+
+.mt-8 {
+    margin-top: var(--8px);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.list-none {
+    list-style: none;
+}
+
+.outline-none {
+    outline: none;
+}
+
+.more-changelog summary::-webkit-details-marker {
+    display: none;
+}
+
+.more-changelog[open] summary .row-arrow {
+    transform: rotate(180deg);
+}
+
 .row-container .row:hover {
     background-color: var(--primary-color);
 }
@@ -455,6 +487,10 @@ main h1, main h2, main h3, main h4 {
     color: var(--font-color) !important;
 }
 
+.main-child-margin{
+    margin-bottom: var(--20px);
+}
+
 .link-hint {
     position: absolute;
     background-color: var(--primary-color);
@@ -515,8 +551,10 @@ pre code {
     background-color: transparent !important;
 }
 
-/* Mobile Row Redesign */
 @media screen and (max-width: 768px) {
+    main {
+        margin-top: 2rem;
+    }
     .row {
         margin-bottom: 16px;
         padding-bottom: 8px;

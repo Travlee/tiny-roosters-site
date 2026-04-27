@@ -1,11 +1,24 @@
 +++
-date = '2026-04-21T00:00:00-04:00'
+date = '2026-04-27T00:00:00-04:00'
 title = 'Unicorns vs Triangles'
 type = 'projects'
-description = '2D tower defense, auto chess, with tactics.'
+layout = 'game'
+description = '2D roguelite, auto battler, tower defense, with tactics.'
 draft = true
-project_tags = ["game"]
+project_tags = ["2D", "roguelite", "auto battler", "tower defense", "tactics"]
+is_game = true
 
 [params]
-    header_image = 'unicorns-vs-triangles-menu.png'
+    card_image = 'unicorns_vs_triangles_banner.webp'
+    header_image = 'unicorns_vs_triangles_banner.webp'
+    release_date = ''
 +++
+
+# Description
+Soon!
+
+# Features
+- Also soon!
+
+# Links
+* {{<a href="#description" title="Test Link 1" alt="Test Link 1">}}Soon here too!{{</a>}}

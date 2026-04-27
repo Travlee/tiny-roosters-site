@@ -1,0 +1,27 @@
+{{ define "main" }}
+
+  <article class="main-child-margin">
+    {{ .Content }}
+  </article>
+
+  <div class="row-container">
+    {{ range first 10 hugo.Data.changelog }}
+      {{ partial "changelog-row.html" . }}
+    {{ end }}
+
+    {{ if gt (len hugo.Data.changelog) 10 }}
+      <details class="more-changelog mt-20">
+        <summary class="row color-primary cursor-pointer list-none outline-none mb-20">
+          <span class="row-arrow">▼</span>
+          <span class="row-title-link">Show more ...</span>
+        </summary>
+        <div class="row-container mt-8">
+          {{ range after 10 hugo.Data.changelog }}
+            {{ partial "changelog-row.html" . }}
+          {{ end }}
+        </div>
+      </details>
+    {{ end }}
+  </div>
+
+{{ end }}

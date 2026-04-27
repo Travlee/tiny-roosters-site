@@ -56,22 +56,26 @@ body header nav a:hover,
 
 @media screen and (max-width: 768px) {
     header {
-        flex-wrap: wrap;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
     }
 
     header > a:first-of-type {
         order: 1;
         flex: 0 1 auto;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     header nav {
-        order: 3;
+        order: 2;
         flex: 1 0 100%;
         display: flex;
         justify-content: space-around;
-        margin-top: 15px;
-        padding-top: 15px;
+        margin-top: 1rem;
+        width: 100%;
     }
 
     body header nav a {
@@ -81,4 +85,4 @@ body header nav a:hover,
         text-align: center;
         padding: 10px 5px;
     }
-    }
+}

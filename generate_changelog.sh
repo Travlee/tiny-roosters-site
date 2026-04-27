@@ -3,7 +3,7 @@
 # Ensure data directory exists
 mkdir -p data
 
-echo "Generating site history from git logs..."
+echo "Generating site changelog from git logs..."
 
 # We find all current markdown files. This automatically excludes deleted files.
 # For each file, we check if it's a draft.
@@ -20,6 +20,6 @@ find content -name "*.md" -print0 | while IFS= read -r -d '' file; do
                 '{date: $date, msg: $msg, file: $file}'
         fi
     done
-done | jq -s 'sort_by(.date) | reverse' > data/history.json
+done | jq -s 'sort_by(.date) | reverse' > data/changelog.json
 
-echo "History generated in data/history.json"
+echo "Changelog generated in data/changelog.json"
