@@ -4,7 +4,7 @@ title = 'Unicorns vs Triangles'
 type = 'projects'
 layout = 'game'
 description = '2D roguelite, auto battler, tower defense, with tactics.'
-draft = true
+draft = false
 project_tags = ["2D", "roguelite", "auto battler", "tower defense", "tactics"]
 is_game = true
 
