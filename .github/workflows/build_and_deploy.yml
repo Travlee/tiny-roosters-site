@@ -33,8 +33,8 @@ jobs:
 
       - name: Generate site history
         run: |
-          chmod +x generate_history.sh
-          ./generate_history.sh
+          chmod +x generate_changelog.sh
+          ./generate_changelog.sh
 
       - name: Build Hugo site
         run: hugo --minify
